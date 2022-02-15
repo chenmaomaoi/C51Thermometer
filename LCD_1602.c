@@ -9,7 +9,7 @@ void LCD_1602_Init();
 void LCD_1602_Clear();
 void LCD_1602_write_command(char comm);
 void LCD_1602_write_data(char ch);
-void LCD_1602_ShowString(unsigned char x, unsigned char y, unsigned char* str);
+void LCD_1602_ShowString(unsigned char row, unsigned char column, unsigned char* str);
 
 /// <summary>
 /// 初始化 LCD 1602
@@ -83,20 +83,20 @@ void LCD_1602_write_data(char ch)
 /// <summary>
 /// 显示字符串
 /// </summary>
-/// <param name="x">行</param>
-/// <param name="y">列</param>
+/// <param name="row">行</param>
+/// <param name="column">列</param>
 /// <param name="str"></param>
-void LCD_1602_ShowString(unsigned char x, unsigned char y, unsigned char* str)
+void LCD_1602_ShowString(unsigned char row, unsigned char column, unsigned char* str)
 {
     IIC_Switch_Device(_LCD_1602_type_id, _LCD_1602_device_id);
 
-    if (x == 0)
+    if (row == 0)
     {
-        LCD_1602_write_command(0x80 | y);
+        LCD_1602_write_command(0x80 | column);
     }
-    if (x == 1)
+    if (row == 1)
     {
-        LCD_1602_write_command(0xc0 | y);
+        LCD_1602_write_command(0xc0 | column);
     }
     //输出字符串
     while (*str != '\0')

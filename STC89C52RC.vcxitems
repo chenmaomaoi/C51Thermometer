@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{ce5247bb-3c67-46b7-adef-881caa38c8db}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)STC89C5xRC.h" />
+  </ItemGroup>
+</Project>

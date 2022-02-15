@@ -1,0 +1,6 @@
+".\Objects\main.obj",
+".\Objects\LCD_1602.obj",
+".\Objects\IIC.obj",
+".\Objects\STARTUP.obj" 
+TO ".\Objects\mainProj" 
+NOPRINT RAMSIZE(256) 

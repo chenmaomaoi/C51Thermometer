@@ -17,9 +17,9 @@ void LCD_1602_Clear();
 /// <summary>
 /// 显示字符串
 /// </summary>
-/// <param name="row">行</param>
-/// <param name="column">列</param>
-/// <param name="str"></param>
-void LCD_1602_ShowString(unsigned char row, unsigned char column, unsigned char* str);
+/// <param name="_row">行</param>
+/// <param name="_column">列</param>
+/// <param name="_str"></param>
+void LCD_1602_ShowString(unsigned char _row, unsigned char _column, unsigned char* _str);
 
 #endif

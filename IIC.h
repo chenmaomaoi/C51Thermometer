@@ -23,13 +23,13 @@ bit IIC_Write_byte(unsigned char _data);
 /// <summary>
 /// 切换设备
 /// </summary>
-/// <param name="_type_id">从设备物料id，由供应商决定；一般相同的设备其ID是相同的</param>
+/// <param name="_device_type_id">从设备物料id，由供应商决定；一般相同的设备其ID是相同的</param>
 /// <param name="_device_id">从设备id，可在从设备上修改；多个相同设备连接到同一总线时需要在设备上修改</param>
 /// <returns>
 /// <para>0:设备没有应答，可能切换失败</para>
 /// <para>1:设备成功应答</para>
 /// </returns>
-bit IIC_Switch_Device(unsigned char _type_id, unsigned char _device_id);
+bit IIC_Switch_Device(unsigned char _device_type_id, unsigned char _device_id);
 
 /// <summary>
 /// 读取从设备一个字节数据

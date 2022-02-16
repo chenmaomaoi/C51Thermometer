@@ -82,12 +82,16 @@ void LCD_1602_write_data(char _ch)
 
 /// <summary>
 /// 显示字符串
+/// <para>带自动换行</para>
 /// </summary>
 /// <param name="row">行</param>
 /// <param name="column">列</param>
-/// <param name="str"></param>
+/// <param name="_str"></param>
 void LCD_1602_ShowString(unsigned char _row, unsigned char _column, unsigned char* _str)
 {
+    unsigned char _count = 16;
+    _count -= _column;
+
     IIC_Switch_Device(_LCD_1602_device_type_id, _LCD_1602_device_id);
 
     if (_row == 0)
@@ -99,9 +103,15 @@ void LCD_1602_ShowString(unsigned char _row, unsigned char _column, unsigned cha
         LCD_1602_write_command(0xc0 | _column);
     }
     //输出字符串
-    while (*_str != '\0')
+    while (*_str)
     {
-        LCD_1602_write_data(*_str);
-        _str++;
+        //自动换行
+        if (!_row && !_count)
+        {
+            LCD_1602_write_command(0xc0 | 0);
+        }
+        _count--;
+
+        LCD_1602_write_data(*_str++);
     }
 }

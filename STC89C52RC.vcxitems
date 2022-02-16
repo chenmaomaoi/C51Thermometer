@@ -17,11 +17,14 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UART.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)main.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)STC89C5xRC.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)UART.h" />
   </ItemGroup>
 </Project>

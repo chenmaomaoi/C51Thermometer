@@ -391,6 +391,11 @@
               <FileType>1</FileType>
               <FilePath>.\IIC.c</FilePath>
             </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UART.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -405,6 +410,16 @@
               <FileName>IIC.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\IIC.h</FilePath>
+            </File>
+            <File>
+              <FileName>UART.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\UART.h</FilePath>
+            </File>
+            <File>
+              <FileName>main.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\main.h</FilePath>
             </File>
           </Files>
         </Group>

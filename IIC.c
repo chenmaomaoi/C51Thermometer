@@ -1,4 +1,5 @@
 #include "STC89C5xRC.h"
+#include "intrins.h"
 #include "IIC.h"
 
 sbit SCL = P2 ^ 0;

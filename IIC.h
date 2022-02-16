@@ -1,9 +1,6 @@
 #ifndef __IIC_H
 #define __IIC_H
 
-#include "STC89C5xRC.h"
-#include "intrins.h"
-
 /// <summary>
 /// IIC≥ı ºªØ
 /// </summary>

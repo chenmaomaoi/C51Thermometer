@@ -1,9 +1,6 @@
 #ifndef __LCD_1602_H
 #define __LCD_1602_H
 
-#include "STC89C5xRC.h"
-#include "intrins.h"
-
 /// <summary>
 /// ≥ı ºªØ LCD 1602
 /// </summary>

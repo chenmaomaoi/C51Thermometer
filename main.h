@@ -4,6 +4,6 @@
 /// <summary>
 /// 串口通信事件：有数据传入
 /// </summary>
-void UART_Event_Recvd();
+//void UART_Event_Recvd();
 
 #endif

@@ -19,4 +19,6 @@ void UART_SendData(unsigned char _data);
 /// <param name="_str"></param>
 void UART_SendString(char* _str);
 
+extern void (*Event_UART_RecvdStr)(unsigned char* str);
+
 #endif

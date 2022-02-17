@@ -46,5 +46,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)REG52.H">
       <Filter>External Dependencies</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ASCII.h">
+      <Filter>External Dependencies</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

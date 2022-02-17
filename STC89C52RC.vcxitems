@@ -20,6 +20,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)UART.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ASCII.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h" />

@@ -441,6 +441,11 @@
               <FileType>5</FileType>
               <FilePath>.\REG52.H</FilePath>
             </File>
+            <File>
+              <FileName>ASCII.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ASCII.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

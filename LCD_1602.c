@@ -5,11 +5,8 @@
 #define _LCD_1602_device_type_id 0x4e
 #define _LCD_1602_device_id 0x27
 
-void LCD_1602_Init();
-void LCD_1602_Clear();
 void LCD_1602_write_command(char _comm);
 void LCD_1602_write_data(char _ch);
-void LCD_1602_ShowString(unsigned char _row, unsigned char _column, unsigned char* _str);
 
 /// <summary>
 /// ≥ı ºªØ LCD 1602

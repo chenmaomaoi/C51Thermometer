@@ -1,7 +1,14 @@
-#include "STC89C5xRC.h"
+#include "REG52.H"
 #include "intrins.h"
 #include "UART.h"
 #include "main.h"
+
+/*Define UART parity mode*/
+#define NONE_PARITY     0   //None parity
+#define ODD_PARITY      1   //Odd parity,奇校验
+#define EVEN_PARITY     2   //Even parity,偶校验
+#define MARK_PARITY     3   //Mark parity,1校验
+#define SPACE_PARITY    4   //Space parity,0校验
 
 #define FOSC 11059200L      //System frequency
 #define BAUD 9600           //UART baudrate

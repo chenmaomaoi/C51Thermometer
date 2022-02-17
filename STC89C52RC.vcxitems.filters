@@ -37,14 +37,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)STC89C5xRC.h">
-      <Filter>External Dependencies</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)UART.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)main.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)REG52.H">
+      <Filter>External Dependencies</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

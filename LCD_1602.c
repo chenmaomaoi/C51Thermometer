@@ -1,4 +1,4 @@
-#include "STC89C5xRC.h"
+#include "REG52.H"
 #include "IIC.h"
 #include "LCD_1602.h"
 

@@ -1,4 +1,4 @@
-#include "STC89C5xRC.h"
+#include "REG52.H"
 #include "intrins.h"
 #include "UART.h"
 #include "IIC.h"

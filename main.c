@@ -3,6 +3,8 @@
 #include "UART.h"
 #include "IIC.h"
 #include "LCD_1602.h"
+#include "SHT_30.h"
+#include <stdio.h>
 
 bit flag = 0;
 char* ch;
@@ -25,7 +27,10 @@ void main()
 	IIC_Init();
 	LCD_1602_Init();
 
+
 	LCD_1602_ShowString(0, 0, mych);
+	SHT_30_Init();
+
 
 	UART_SendString(mych);
 
@@ -34,6 +39,11 @@ void main()
 		if (flag)
 		{
 			LCD_1602_ShowString(0, 0, ch);
+			sprintf(ch, "%.2f", SHT_30_ReadT());
+			LCD_1602_ShowString(1, 0, ch);
+
+			sprintf(ch, "%.2f", SHT_30_ReadRH());
+			LCD_1602_ShowString(1, 9, ch);
 			flag = 0;
 		}
 

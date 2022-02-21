@@ -42,7 +42,7 @@ void UART_Init()
 /// <summary>
 /// 发送一个字节
 /// </summary>
-/// <param name="_data"></param>
+/// <param name="data"></param>
 void UART_SendData(unsigned char _data)
 {
 	ACC = _data;              //Calculate the even parity bit P (PSW.0)
@@ -73,11 +73,11 @@ void UART_SendData(unsigned char _data)
 /// 发送字符串
 /// </summary>
 /// <param name="_str"></param>
-void UART_SendString(char* _str)
+void UART_SendString(char* str)
 {
-	while (*_str)              //Check the end of the string
+	while (*str)              //Check the end of the string
 	{
-		UART_SendData(*_str++);     //Send current char and increment string ptr
+		UART_SendData(*str++);     //Send current char and increment string ptr
 	}
 }
 

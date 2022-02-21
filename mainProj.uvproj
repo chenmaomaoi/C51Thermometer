@@ -396,6 +396,16 @@
               <FileType>1</FileType>
               <FilePath>.\UART.c</FilePath>
             </File>
+            <File>
+              <FileName>CRC_8.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CRC_8.c</FilePath>
+            </File>
+            <File>
+              <FileName>SHT_30.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SHT_30.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -420,6 +430,16 @@
               <FileName>main.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\main.h</FilePath>
+            </File>
+            <File>
+              <FileName>CRC_8.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CRC_8.h</FilePath>
+            </File>
+            <File>
+              <FileName>SHT_30.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SHT_30.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -3,7 +3,7 @@
 #include "SHT_30.h"
 #include "CRC_8.h"
 
-unsigned char raw_data[6];
+unsigned int raw_data[4];
 
 void SHT_30_Init()
 {
@@ -49,7 +49,7 @@ float SHT_30_ReadT()
 float SHT_30_ReadRH()
 {
 	float RH;
-	read_raw_data();
+	//read_raw_data();
 	RH = 100 * (1.0 * raw_data[2] / 65535);
 	return RH;
 }

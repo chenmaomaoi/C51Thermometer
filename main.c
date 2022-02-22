@@ -7,14 +7,13 @@
 #include "stdio.h"
 #include "ASCII.h"
 
-bit flag = 0;
-unsigned char* recvdStr;
 char ch[16];
 
-void EventHandler_UART_RecvStr(const unsigned char* str)
+void EventHandler_UART_RecvByte(const unsigned char dat)
 {
-	recvdStr = str;
-	flag = 1;
+	unsigned char recvdStr[2] = { NUL,NUL };
+	recvdStr[0] = dat;
+	LCD_1602_ShowString(0, 0, recvdStr);
 }
 
 void delay1s(void)   //Îó²î -0.000000001137us
@@ -29,7 +28,7 @@ void delay1s(void)   //Îó²î -0.000000001137us
 void main()
 {
 	char mych[32] = "Hello World!";
-	Event_UART_RecvdStr = &EventHandler_UART_RecvStr;
+	Event_UART_RecvdByte = &EventHandler_UART_RecvByte;
 
 	UART_Init();
 	EA = 1;
@@ -44,12 +43,6 @@ void main()
 
 	while (1)
 	{
-		if (flag)
-		{
-			LCD_1602_ShowString(0, 0, recvdStr);
-			flag = 0;
-		}
-
 		if (SHT_30_DataProcess())
 		{
 			sprintf(ch, "T:%.2f", SHT_30_T);

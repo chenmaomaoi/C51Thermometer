@@ -117,6 +117,9 @@ loop:
 /// </summary>
 void UART_ISR() interrupt 4
 {
-	UART_recvingStr();
-	(*Event_UART_RecvdStr)(recvdStr);
+	if (RI)
+	{
+		UART_recvingStr();
+		(*Event_UART_RecvdStr)(recvdStr);
+	}
 }

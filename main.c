@@ -4,7 +4,7 @@
 #include "IIC.h"
 #include "LCD_1602.h"
 #include "SHT_30.h"
-#include <stdio.h>
+#include "stdio.h"
 
 bit flag = 0;
 char* ch;
@@ -36,7 +36,7 @@ void main()
 	IIC_Init();
 	LCD_1602_Init();
 
-	LCD_1602_ShowString(0, 0, mych);
+	//LCD_1602_ShowString(0, 0, mych);
 	SHT_30_Init();
 
 	UART_SendString(mych);
@@ -49,11 +49,18 @@ void main()
 			flag = 0;
 		}
 
-		sprintf(ch, "%.2f", SHT_30_ReadT());
-		LCD_1602_ShowString(1, 0, ch);
+		if (SHT_30_DataProcess())
+		{
+			sprintf(ch, "T:%.2f", SHT_30_T);
+			LCD_1602_ShowString(1, 0, ch);
 
-		sprintf(ch, "%.2f", SHT_30_ReadRH());
-		LCD_1602_ShowString(1, 11, ch);
+			sprintf(ch, "RH:%.2f", SHT_30_RH);
+			LCD_1602_ShowString(1, 8, ch);
+		}
+		else
+		{
+			LCD_1602_ShowString(1, 0, mych);
+		}
 
 		delay1s();
 	}

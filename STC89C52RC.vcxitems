@@ -30,6 +30,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)main.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)REG52.H" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SHT_30.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UART.h" />
   </ItemGroup>
 </Project>

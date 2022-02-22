@@ -466,6 +466,11 @@
               <FileType>5</FileType>
               <FilePath>.\ASCII.h</FilePath>
             </File>
+            <File>
+              <FileName>stdio.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\stdio.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

@@ -5,12 +5,6 @@
 sbit SCL = P2 ^ 0;
 sbit SDA = P2 ^ 1;
 
-void IIC_Init();
-void IIC_Start();
-void IIC_Stop();
-bit IIC_Write_byte(unsigned char _data);
-unsigned char IIC_Read_byte(bit _ack);
-
 void IIC_dalay();
 void IIC_send_ack(bit _ack);
 bit IIC_get_ack();

@@ -61,5 +61,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC_8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h">
+      <Filter>External Dependencies</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

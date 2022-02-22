@@ -9,7 +9,7 @@
 bit flag = 0;
 char* ch;
 
-void EventHandler_UART_RecvdStr(unsigned char* str)
+void EventHandler_UART_RecvdStr(const unsigned char* str)
 {
 	ch = str;
 	flag = 1;

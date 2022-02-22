@@ -17,7 +17,7 @@
 
 unsigned char recvdStr[32];
 
-void (*Event_UART_RecvdStr)(unsigned char* str);
+void (*Event_UART_RecvdStr)(const unsigned char* str);
 
 /// <summary>
 /// 串口通信初始化
@@ -42,10 +42,10 @@ void UART_Init()
 /// <summary>
 /// 发送一个字节
 /// </summary>
-/// <param name="data"></param>
-void UART_SendData(unsigned char _data)
+/// <param name="dat"></param>
+void UART_SendByte(unsigned char dat)
 {
-	ACC = _data;              //Calculate the even parity bit P (PSW.0)
+	ACC = dat;              //Calculate the even parity bit P (PSW.0)
 #if (PARITYBIT != NONE_PARITY)
 	if (P)                  //Set the parity bit according to P
 	{
@@ -72,12 +72,12 @@ void UART_SendData(unsigned char _data)
 /// <summary>
 /// 发送字符串
 /// </summary>
-/// <param name="_str"></param>
-void UART_SendString(char* str)
+/// <param name="str"></param>
+void UART_SendString(const char* str)
 {
 	while (*str)              //Check the end of the string
 	{
-		UART_SendData(*str++);     //Send current char and increment string ptr
+		UART_SendByte(*str++);     //Send current char and increment string ptr
 	}
 }
 

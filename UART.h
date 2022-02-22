@@ -10,15 +10,15 @@ void UART_Init();
 /// <summary>
 /// 发送一个字节
 /// </summary>
-/// <param name="data"></param>
-void UART_SendData(unsigned char _data);
+/// <param name="dat"></param>
+void UART_SendByte(unsigned char dat);
 
 /// <summary>
 /// 发送字符串
 /// </summary>
 /// <param name="str"></param>
-void UART_SendString(char* str);
+void UART_SendString(const char* str);
 
-extern void (*Event_UART_RecvdStr)(unsigned char* str);
+extern void (*Event_UART_RecvdStr)(const unsigned char* str);
 
 #endif

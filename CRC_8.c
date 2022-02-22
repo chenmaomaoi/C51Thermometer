@@ -1,5 +1,11 @@
 
-unsigned char CRC_8_Compute(unsigned char* check_data, unsigned char num_of_data)
+/// <summary>
+/// CRC-8 ¼ÆËã
+/// </summary>
+/// <param name="check_data"></param>
+/// <param name="num_of_data"></param>
+/// <returns></returns>
+unsigned char CRC_8_Compute(const unsigned char* check_data, unsigned char num_of_data)
 {
 	unsigned char bit_mask;        // bit mask
 	unsigned char crc = 0xFF; // calculated checksum
@@ -25,7 +31,14 @@ unsigned char CRC_8_Compute(unsigned char* check_data, unsigned char num_of_data
 	return crc;
 }
 
-bit CRC_8_Check(unsigned char* p, unsigned char num_of_data, unsigned char crc_data)
+/// <summary>
+/// CRC-8Ğ£Ñé
+/// </summary>
+/// <param name="p"></param>
+/// <param name="num_of_data"></param>
+/// <param name="crc_data"></param>
+/// <returns></returns>
+bit CRC_8_Check(const unsigned char* p, unsigned char num_of_data, unsigned char crc_data)
 {
 	return (CRC_8_Compute(p, num_of_data) == crc_data) ? 1 : 0;
 }

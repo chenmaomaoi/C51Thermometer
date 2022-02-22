@@ -17,6 +17,6 @@ void LCD_1602_Clear();
 /// <param name="row">ÐÐ</param>
 /// <param name="column">ÁÐ</param>
 /// <param name="str"></param>
-void LCD_1602_ShowString(unsigned char row, unsigned char column, unsigned  char* str);
+void LCD_1602_ShowString(unsigned char row, unsigned char column, const unsigned char* str);
 
 #endif

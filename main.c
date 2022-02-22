@@ -5,13 +5,15 @@
 #include "LCD_1602.h"
 #include "SHT_30.h"
 #include "stdio.h"
+#include "ASCII.h"
 
 bit flag = 0;
-char* ch;
+unsigned char* recvdStr;
+char ch[16];
 
-void EventHandler_UART_RecvdStr(const unsigned char* str)
+void EventHandler_UART_RecvStr(const unsigned char* str)
 {
-	ch = str;
+	recvdStr = str;
 	flag = 1;
 }
 
@@ -27,8 +29,7 @@ void delay1s(void)   //Îó²î -0.000000001137us
 void main()
 {
 	char mych[32] = "Hello World!";
-
-	Event_UART_RecvdStr = &EventHandler_UART_RecvdStr;
+	Event_UART_RecvdStr = &EventHandler_UART_RecvStr;
 
 	UART_Init();
 	EA = 1;
@@ -36,7 +37,7 @@ void main()
 	IIC_Init();
 	LCD_1602_Init();
 
-	//LCD_1602_ShowString(0, 0, mych);
+	LCD_1602_ShowString(0, 0, mych);
 	SHT_30_Init();
 
 	UART_SendString(mych);
@@ -45,7 +46,7 @@ void main()
 	{
 		if (flag)
 		{
-			LCD_1602_ShowString(0, 0, ch);
+			LCD_1602_ShowString(0, 0, recvdStr);
 			flag = 0;
 		}
 

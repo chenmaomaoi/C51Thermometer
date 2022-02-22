@@ -15,8 +15,7 @@
 
 #define PARITYBIT NONE_PARITY   //Testing even parity
 
-unsigned char recvdStr[32];
-
+void (*Event_UART_RecvdByte)(const unsigned char ch);
 void (*Event_UART_RecvdStr)(const unsigned char* str);
 
 /// <summary>
@@ -85,8 +84,9 @@ void UART_SendString(const char* str)
 /// 串口通信，接收字符串数据
 /// </summary>
 /// <returns>数据长度大于等于数组长度时，返回1</returns>
-bit UART_recvingStr()
+const unsigned char* UART_recvingStr()
 {
+	unsigned char recvdStr[32];
 	unsigned char i = 0;
 	unsigned char count = 0;
 loop:
@@ -104,12 +104,12 @@ loop:
 			if (count > 130)
 			{
 				recvdStr[i] = NUL;
-				return 0;
+				return recvdStr;
 			}
 		}
 		goto loop;
 	}
-	return 1;
+	return recvdStr;
 }
 
 /// <summary>
@@ -119,7 +119,8 @@ void UART_ISR() interrupt 4
 {
 	if (RI)
 	{
-		UART_recvingStr();
-		(*Event_UART_RecvdStr)(recvdStr);
+		//(*Event_UART_RecvdByte)();
+
+		(*Event_UART_RecvdStr)(UART_recvingStr());
 	}
 }

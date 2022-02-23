@@ -2,7 +2,7 @@
 #define __LCD_1602_H
 
 /// <summary>
-/// 初始化 LCD 1602
+/// 初始化 LCD 1602，前置条件：IIC初始化
 /// </summary>
 void LCD_1602_Init();
 

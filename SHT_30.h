@@ -2,7 +2,7 @@
 #define __SHT_30
 
 /// <summary>
-/// SHT 30 初始化
+/// SHT 30 初始化，前置条件：IIC初始化
 /// </summary>
 void SHT_30_Init();
 

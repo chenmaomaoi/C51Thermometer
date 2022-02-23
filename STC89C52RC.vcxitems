@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC_8.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ESP01.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
@@ -24,6 +25,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)ASCII.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC_8.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ESP01.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h" />

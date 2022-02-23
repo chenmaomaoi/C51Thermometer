@@ -15,7 +15,7 @@
 
 #define PARITYBIT NONE_PARITY   //Testing even parity
 
-void (*Event_UART_RecvdStr)(const unsigned char* str);
+void (*UART_Event_RecvdStr)(const unsigned char* str);
 
 /// <summary>
 /// 串口通信初始化
@@ -118,6 +118,6 @@ void UART_ISR() interrupt 4
 	if (RI)
 	{
 		//触发字符串接收事件
-		(*Event_UART_RecvdStr)(recvingStr());
+		(*UART_Event_RecvdStr)(recvingStr());
 	}
 }

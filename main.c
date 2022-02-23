@@ -6,14 +6,9 @@
 #include "SHT_30.h"
 #include "stdio.h"
 #include "ASCII.h"
+#include "ESP01.h"
 
 const char* CONNECT_SERVER_STR = "AT+CIPSTART=\"TCP\",\"cn-zz-bgp-4.natfrp.cloud\",16967\r\n";
-
-void EventHandler_UART_RecvdStr(const unsigned char* str)
-{
-	LCD_1602_Clear();
-	LCD_1602_ShowString(0, 0, str);
-}
 
 void delay1s(void)   //Îó²î -0.000000001137us
 {
@@ -21,23 +16,34 @@ void delay1s(void)   //Îó²î -0.000000001137us
 	for (c = 13; c > 0; c--)
 		for (b = 247; b > 0; b--)
 			for (a = 142; a > 0; a--);
-	_nop_();  //if Keil,require use intrins.h
+	_nop_();
+}
+
+void connectTCPServer()
+{
+	UART_SendString(CONNECT_SERVER_STR);
+}
+
+void showRecvStr(const unsigned char* str)
+{
+	//LCD_1602_Clear();
+	LCD_1602_ShowString(0, 0, str);
 }
 
 void main()
 {
 	char ch[10];
-	Event_UART_RecvdStr = &EventHandler_UART_RecvdStr;
+
+	ESP01_Init();
+	ESP01_Event_WiFiGotIP = &connectTCPServer;
+	ESP01_Event_MsgRecvd = &showRecvStr;
 
 	IIC_Init();
 	LCD_1602_Init();
+	SHT_30_Init();
 
 	UART_Init();
 	EA = 1;
-
-	SHT_30_Init();
-
-	//UART_SendString("AT\r\n" + EOT);
 
 	while (1)
 	{

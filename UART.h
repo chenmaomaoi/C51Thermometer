@@ -19,5 +19,5 @@ void UART_SendByte(unsigned char dat);
 /// <param name="str"></param>
 void UART_SendString(const char* str);
 
-extern void (*Event_UART_RecvdStr)(const unsigned char* str);
+extern void (*UART_Event_RecvdStr)(const unsigned char* str);
 #endif

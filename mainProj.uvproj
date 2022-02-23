@@ -406,6 +406,11 @@
               <FileType>1</FileType>
               <FilePath>.\SHT_30.c</FilePath>
             </File>
+            <File>
+              <FileName>ESP01.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ESP01.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -440,6 +445,11 @@
               <FileName>SHT_30.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\SHT_30.h</FilePath>
+            </File>
+            <File>
+              <FileName>ESP01.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ESP01.h</FilePath>
             </File>
           </Files>
         </Group>

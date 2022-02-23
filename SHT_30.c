@@ -64,8 +64,8 @@ bit SHT_30_DataProcess()
 		buffer[1] <<= 8;
 		buffer[1] |= SHT_30_RAW_Data[4];
 
-		SHT_30_T = -45 + 175 * (1.0 * buffer[0] / 65535);
-		SHT_30_RH = 100 * (1.0 * buffer[1] / 65535);
+		SHT_30_T = 175.0f * (float)buffer[0] / 65535.0f - 45.0f;
+		SHT_30_RH = 100.0f * buffer[1] / 65535.0f;
 
 		return 1;
 	}

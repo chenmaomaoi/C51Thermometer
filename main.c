@@ -41,14 +41,14 @@ void main()
 
 	while (1)
 	{
-		//if (SHT_30_DataProcess())
-		//{
-		//	sprintf(ch, "T:%.2f ", SHT_30_T);
-		//	LCD_1602_ShowString(1, 0, ch);
+		if (SHT_30_DataProcess())
+		{
+			sprintf(ch, "T:%.2f ", SHT_30_T);
+			LCD_1602_ShowString(1, 0, ch);
 
-		//	sprintf(ch, "RH:%.2f", SHT_30_RH);
-		//	LCD_1602_ShowString(1, 8, ch);
-		//}
+			sprintf(ch, "RH:%.2f", SHT_30_RH);
+			LCD_1602_ShowString(1, 8, ch);
+		}
 
 		delay1s();
 	}

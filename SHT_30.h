@@ -13,9 +13,9 @@ void SHT_30_Init();
 bit SHT_30_DataProcess();
 
 /// <summary>
-/// SHT 30 温湿度原始数据
+/// SHT 30 原始数据
 /// </summary>
-extern unsigned int SHT_30_raw_data[2];
+extern unsigned char SHT_30_RAW_Data[6];
 
 /// <summary>
 /// SHT 30 温度

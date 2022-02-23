@@ -6,7 +6,7 @@
 /// <summary>
 /// 温湿度原始数据
 /// </summary>
-unsigned int SHT_30_raw_data[2];
+unsigned char SHT_30_RAW_Data[6];
 
 /// <summary>
 /// 温度
@@ -36,7 +36,7 @@ void SHT_30_Init()
 /// <returns></returns>
 bit SHT_30_DataProcess()
 {
-	unsigned char buffer[6];
+	unsigned char buffer[2];
 
 	IIC_Start();
 	IIC_Write_Byte(0x88);
@@ -46,26 +46,26 @@ bit SHT_30_DataProcess()
 	IIC_Start();
 	IIC_Write_Byte(0x89);
 
-	buffer[0] = IIC_Read_Byte(1);
-	buffer[1] = IIC_Read_Byte(1);
-	buffer[2] = IIC_Read_Byte(1);
-	buffer[3] = IIC_Read_Byte(1);
-	buffer[4] = IIC_Read_Byte(1);
-	buffer[5] = IIC_Read_Byte(0);
+	SHT_30_RAW_Data[0] = IIC_Read_Byte(1);
+	SHT_30_RAW_Data[1] = IIC_Read_Byte(1);
+	SHT_30_RAW_Data[2] = IIC_Read_Byte(1);
+	SHT_30_RAW_Data[3] = IIC_Read_Byte(1);
+	SHT_30_RAW_Data[4] = IIC_Read_Byte(1);
+	SHT_30_RAW_Data[5] = IIC_Read_Byte(0);
 	IIC_Stop();
 
-	if (CRC_8_Check(&buffer[0], 2, buffer[2]) && CRC_8_Check(&buffer[3], 2, buffer[5]))
+	if (CRC_8_Check(&SHT_30_RAW_Data[0], 2, SHT_30_RAW_Data[2]) && CRC_8_Check(&SHT_30_RAW_Data[3], 2, SHT_30_RAW_Data[5]))
 	{
-		SHT_30_raw_data[0] = buffer[0];
-		SHT_30_raw_data[0] <<= 8;
-		SHT_30_raw_data[0] |= buffer[1];
+		buffer[0] = SHT_30_RAW_Data[0];
+		buffer[0] <<= 8;
+		buffer[0] |= SHT_30_RAW_Data[1];
 
-		SHT_30_raw_data[1] = buffer[3];
-		SHT_30_raw_data[1] <<= 8;
-		SHT_30_raw_data[1] |= buffer[4];
+		buffer[1] = SHT_30_RAW_Data[3];
+		buffer[1] <<= 8;
+		buffer[1] |= SHT_30_RAW_Data[4];
 
-		SHT_30_T = -45 + 175 * (1.0 * SHT_30_raw_data[0] / 65535);
-		SHT_30_RH = 100 * (1.0 * SHT_30_raw_data[1] / 65535);
+		SHT_30_T = -45 + 175 * (1.0 * buffer[0] / 65535);
+		SHT_30_RH = 100 * (1.0 * buffer[1] / 65535);
 
 		return 1;
 	}

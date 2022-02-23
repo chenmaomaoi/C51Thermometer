@@ -107,7 +107,7 @@ void LCD_1602_ShowString(unsigned char row, unsigned char column, const unsigned
         write_command(0xc0 | column);
     }
     //输出字符串
-    while (*str)
+    while (*str && *str != '\r')
     {
         //自动换行
         if (!row && !count)

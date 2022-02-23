@@ -15,7 +15,7 @@
 
 #define PARITYBIT NONE_PARITY   //Testing even parity
 
-void (*Event_UART_RecvdByte)(const unsigned char dat);
+void (*Event_UART_RecvdStr)(const unsigned char* str);
 
 /// <summary>
 /// 串口通信初始化
@@ -80,14 +80,44 @@ void UART_SendString(const char* str)
 }
 
 /// <summary>
+/// 接收字符串
+/// </summary>
+/// <returns></returns>
+const unsigned char* recvingStr()
+{
+	unsigned char recvdStr[64];
+	unsigned char i = 0;
+	unsigned char count = 0;
+loop:
+	recvdStr[i] = SBUF;
+	count = 0;
+	RI = 0;
+	if (i < sizeof(recvdStr) - 1)
+	{
+		i++;
+		while (!RI)
+		{
+			count++;
+			//接收数据等待延迟，等待时间太久会导致CPU运算闲置，太短会出现"数据包被分割", 默认count = 130
+			if (count > 130)
+			{
+				recvdStr[i] = NUL;
+				return recvdStr;
+			}
+		}
+		goto loop;
+	}
+	return recvdStr;
+}
+
+/// <summary>
 /// 串口中断服务
 /// </summary>
 void UART_ISR() interrupt 4
 {
 	if (RI)
 	{
-		(*Event_UART_RecvdByte)(SBUF);
-		while (!RI);
-		RI = 0;
+		//触发字符串接收事件
+		(*Event_UART_RecvdStr)(recvingStr());
 	}
 }

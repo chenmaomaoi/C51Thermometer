@@ -1,5 +1,13 @@
-#ifndef __SHT_30
-#define __SHT_30
+#ifndef _SHT_30
+#define _SHT_30
+
+#ifndef _IIC_H
+#include "IIC.h"
+#endif // !_IIC_H
+
+#ifndef _CRC_8_H
+#include "CRC_8.h"
+#endif // !_CRC_8_H
 
 /// <summary>
 /// SHT 30 初始化，前置条件：IIC初始化

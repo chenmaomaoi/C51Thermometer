@@ -6,8 +6,8 @@ Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
 All rights reserved.
 --------------------------------------------------------------------------*/
 
-#ifndef __STDIO_H__
-#define __STDIO_H__
+#ifndef _STDIO_H
+#define _STDIO_H
 
 #ifndef EOF
  #define EOF -1

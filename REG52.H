@@ -6,8 +6,8 @@ Copyright (c) 1988-2002 Keil Elektronik GmbH and Keil Software, Inc.
 All rights reserved.
 --------------------------------------------------------------------------*/
 
-#ifndef __REG52_H__
-#define __REG52_H__
+#ifndef _REG52_H
+#define _REG52_H
 
 /*  BYTE Registers  */
 sfr P0    = 0x80;

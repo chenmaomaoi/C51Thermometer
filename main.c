@@ -1,12 +1,4 @@
-#include "REG52.H"
-#include "intrins.h"
-#include "UART.h"
-#include "IIC.h"
-#include "LCD_1602.h"
-#include "SHT_30.h"
-#include "stdio.h"
-#include "ASCII.h"
-#include "ESP01.h"
+#include "main.h"
 
 const char* CONNECT_SERVER_STR = "AT+CIPSTART=\"TCP\",\"cn-zz-bgp-4.natfrp.cloud\",16967\r\n";
 

@@ -1,5 +1,3 @@
-#include "LCD_1602.h"
-#include "UART.h"
 #include "ESP01.h"
 
 void (*ESP01_Event_WiFiConnected)();

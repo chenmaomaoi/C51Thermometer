@@ -1,5 +1,9 @@
-#ifndef __LCD_1602_H
-#define __LCD_1602_H
+#ifndef _LCD_1602_H
+#define _LCD_1602_H
+
+#ifndef _IIC_H
+#include "IIC.h"
+#endif // !_IIC_H
 
 /// <summary>
 /// 初始化 LCD 1602，前置条件：IIC初始化

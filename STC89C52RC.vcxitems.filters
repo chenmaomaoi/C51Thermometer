@@ -35,6 +35,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ESP01.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Extensions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h">
@@ -52,7 +55,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)REG52.H">
+    <ClInclude Include="$(MSBuildThisFileDirectory)reg52.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ASCII.h">
@@ -68,6 +71,12 @@
       <Filter>External Dependencies</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)ESP01.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
+      <Filter>External Dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Extensions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

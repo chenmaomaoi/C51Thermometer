@@ -1,5 +1,3 @@
-#include "REG52.H"
-#include "IIC.h"
 #include "LCD_1602.h"
 
 /// <summary>

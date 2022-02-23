@@ -1,7 +1,4 @@
-#include "REG52.H"
-#include "intrins.h"
 #include "UART.h"
-#include "ASCII.h"
 
 /*Define UART parity mode*/
 #define NONE_PARITY     0   //None parity

@@ -1,6 +1,10 @@
 #ifndef _ESP01_H
 #define _ESP01_H
 
+#ifndef _UART_H
+#include "UART.h"
+#endif // !_UART_H
+
 void ESP01_Init();
 
 extern void (*ESP01_Event_WiFiConnected)();

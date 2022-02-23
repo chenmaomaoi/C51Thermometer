@@ -1,7 +1,4 @@
-#include "REG52.H"
-#include "IIC.h"
 #include "SHT_30.h"
-#include "CRC_8.h"
 
 /// <summary>
 /// 温湿度原始数据

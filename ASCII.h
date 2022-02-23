@@ -1,5 +1,5 @@
-#ifndef __ASCII_H_
-#define __ASCII_H_
+#ifndef _ASCII_H
+#define _ASCII_H
 
 #define NUL 0x00 // NULL
 #define SOH 0x01 // Start of Heading

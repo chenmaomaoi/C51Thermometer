@@ -1,3 +1,4 @@
+#include "CRC_8.h"
 
 /// <summary>
 /// CRC-8 º∆À„

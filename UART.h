@@ -1,5 +1,13 @@
-#ifndef __UART_H
-#define __UART_H
+#ifndef _UART_H
+#define _UART_H
+
+#ifndef _REG52_H
+#include "reg52.H"
+#endif // !_REG52_H
+
+#ifndef _ASCII_H
+#include "ASCII.h"
+#endif // !_ASCII_H
 
 /// <summary>
 /// 串口通信初始化

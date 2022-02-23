@@ -1,5 +1,16 @@
-#ifndef __IIC_H
-#define __IIC_H
+#ifndef _IIC_H
+#define _IIC_H
+
+#ifndef _REG52_H
+#include "reg52.h"
+#endif // !_REG52_H
+
+#ifndef _INTRINS_H
+#include "intrins.h"
+#endif // !_INTRINS_H
+
+sbit IIC_SCL = P2 ^ 0;
+sbit IIC_SDA = P2 ^ 1;
 
 /// <summary>
 /// IIC≥ı ºªØ

@@ -6,8 +6,8 @@ Copyright (c) 1988-2010 Keil Elektronik GmbH and ARM Germany GmbH
 All rights reserved.
 --------------------------------------------------------------------------*/
 
-#ifndef __INTRINS_H__
-#define __INTRINS_H__
+#ifndef _INTRINS_H
+#define _INTRINS_H
 
 #pragma SAVE
 

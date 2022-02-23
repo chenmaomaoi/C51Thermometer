@@ -36,7 +36,7 @@ void SHT_30_Init()
 /// <returns></returns>
 bit SHT_30_DataProcess()
 {
-	unsigned char buffer[2];
+	unsigned int buffer[2];
 
 	IIC_Start();
 	IIC_Write_Byte(0x88);

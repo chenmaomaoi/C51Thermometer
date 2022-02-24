@@ -5,6 +5,10 @@
 #include "IIC.h"
 #endif // !_IIC_H
 
+#ifndef _STRING_H
+#include "string.h"
+#endif // !_STRING_H
+
 /// <summary>
 /// 初始化 LCD 1602，前置条件：IIC初始化
 /// </summary>

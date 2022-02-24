@@ -29,12 +29,4 @@
 #include "stdio.h"
 #endif // !_STDIO_H
 
-#ifndef _ASCII_H
-#include "ASCII.h"
-#endif // !_ASCII_H
-
-#ifndef _ESP01_H
-#include "ESP01.h"
-#endif // !_ESP01_H
-
 #endif

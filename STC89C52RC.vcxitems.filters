@@ -32,12 +32,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC_8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)ESP01.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extensions.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h">
@@ -58,9 +52,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)reg52.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ASCII.h">
-      <Filter>External Dependencies</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)SHT_30.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -70,14 +61,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ESP01.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
       <Filter>External Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Extensions.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

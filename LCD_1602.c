@@ -91,6 +91,7 @@ void LCD_1602_Clear()
 /// <param name="_str"></param>
 void LCD_1602_ShowString(unsigned char row, unsigned char column, const unsigned char* str)
 {
+    unsigned char i;
     unsigned char count = 16;
     count -= column;
 
@@ -104,17 +105,24 @@ void LCD_1602_ShowString(unsigned char row, unsigned char column, const unsigned
     {
         write_command(0xc0 | column);
     }
-    //Êä³ö×Ö·û´®
-    while (*str && *str != '\r')
-    {
-        //×Ô¶¯»»ÐÐ
-        if (!row && !count)
-        {
-            write_command(0xc0 | 0);
-        }
-        count--;
 
-        write_char(*str++);
+    //Êä³ö×Ö·û´®
+    for (i = 0; i < strlen(str); i++)
+    {
+        if (str[i] == '\r' || str[i] == '\n')
+        {
+            continue;
+        }
+        else
+        {
+            if (!row && !count)
+            {
+                write_command(0xc0 | 0);
+            }
+            count--;
+
+            write_char(str[i]);
+        }
     }
 
     IIC_Stop();

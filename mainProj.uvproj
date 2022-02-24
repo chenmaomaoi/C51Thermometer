@@ -50,8 +50,8 @@
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
-          <DebugInformation>1</DebugInformation>
-          <BrowseInformation>1</BrowseInformation>
+          <DebugInformation>0</DebugInformation>
+          <BrowseInformation>0</BrowseInformation>
           <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>0</HexFormatSelection>
           <Merge32K>0</Merge32K>
@@ -406,11 +406,6 @@
               <FileType>1</FileType>
               <FilePath>.\SHT_30.c</FilePath>
             </File>
-            <File>
-              <FileName>ESP01.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ESP01.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -446,11 +441,6 @@
               <FileType>5</FileType>
               <FilePath>.\SHT_30.h</FilePath>
             </File>
-            <File>
-              <FileName>ESP01.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ESP01.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -480,6 +470,11 @@
               <FileName>stdio.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\stdio.h</FilePath>
+            </File>
+            <File>
+              <FileName>string.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\string.h</FilePath>
             </File>
           </Files>
         </Group>

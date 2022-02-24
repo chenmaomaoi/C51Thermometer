@@ -68,11 +68,12 @@ void UART_SendByte(unsigned char dat)
 /// 发送字符串
 /// </summary>
 /// <param name="str"></param>
-void UART_SendString(const char* str)
+void UART_SendString(const unsigned char* str)
 {
-	while (*str)              //Check the end of the string
+	unsigned char i;
+	for (i = 0; i < strlen(str); i++)
 	{
-		UART_SendByte(*str++);     //Send current char and increment string ptr
+		UART_SendByte(str[i]);
 	}
 }
 
@@ -98,7 +99,7 @@ loop:
 			//接收数据等待延迟，等待时间太久会导致CPU运算闲置，太短会出现"数据包被分割", 默认count = 130
 			if (count > 130)
 			{
-				recvdStr[i] = NUL;
+				recvdStr[i] = '\0';
 				return recvdStr;
 			}
 		}

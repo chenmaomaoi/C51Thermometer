@@ -1,35 +1,39 @@
 #include "main.h"
 
-const char* CONNECT_SERVER_STR = "AT+CIPSTART=\"TCP\",\"cn-zz-bgp-4.natfrp.cloud\",16967\r\n";
-
-void delay1s(void)   //Îó²î -0.000000001137us
-{
-	unsigned char a, b, c;
-	for (c = 13; c > 0; c--)
-		for (b = 247; b > 0; b--)
-			for (a = 142; a > 0; a--);
-	_nop_();
-}
-
-void connectTCPServer()
-{
-	UART_SendString(CONNECT_SERVER_STR);
-}
+unsigned char Timer0Counter;
+void (*Timer0_Event_Invok)(void);
 
 void showRecvStr(const unsigned char* str)
 {
-	//LCD_1602_Clear();
+	LCD_1602_Clear();
 	LCD_1602_ShowString(0, 0, str);
+}
+
+void showAndSendData()
+{
+	char ch[16];
+	if (SHT_30_DataProcess())
+	{
+		sprintf(ch, "T:%.2f RH:%.2f", SHT_30_T, SHT_30_RH);
+		LCD_1602_ShowString(1, 0, ch);
+		UART_SendString(SHT_30_RAW_Data);
+	}
+	return;
+}
+
+void InitTimer0()
+{
+	//10ms
+	TMOD |= 0x01;
+	TH0 = 0xDC;
+	TL0 = 0x00;
+	ET0 = 1;
+	TR0 = 1;
+	Timer0Counter = 0;
 }
 
 void main()
 {
-	char ch[10];
-
-	ESP01_Init();
-	ESP01_Event_WiFiGotIP = &connectTCPServer;
-	ESP01_Event_MsgRecvd = &showRecvStr;
-
 	IIC_Init();
 	LCD_1602_Init();
 	SHT_30_Init();
@@ -37,17 +41,26 @@ void main()
 	UART_Init();
 	EA = 1;
 
+	InitTimer0();
+
+	UART_Event_RecvdStr = &showRecvStr;
+	Timer0_Event_Invok = &showAndSendData;
+
 	while (1)
 	{
-		if (SHT_30_DataProcess())
-		{
-			sprintf(ch, "T:%.2f ", SHT_30_T);
-			LCD_1602_ShowString(1, 0, ch);
+		;
+	}
+}
 
-			sprintf(ch, "RH:%.2f", SHT_30_RH);
-			LCD_1602_ShowString(1, 8, ch);
-		}
-
-		delay1s();
+void Timer0Interrupt() interrupt 1
+{
+	TH0 = 0xDC;
+	TL0 = 0x00;
+	//add your code here!
+	Timer0Counter++;
+	if (Timer0Counter > 200)
+	{
+		Timer0Counter = 0;
+		(*Timer0_Event_Invok)();
 	}
 }

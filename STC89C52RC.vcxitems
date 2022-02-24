@@ -15,8 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC_8.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)ESP01.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Extensions.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
@@ -24,10 +22,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)UART.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)ASCII.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC_8.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)ESP01.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)Extensions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h" />

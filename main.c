@@ -1,6 +1,6 @@
 #include "main.h"
 
-unsigned char Timer0Counter;
+unsigned int Timer0Counter;
 void (*Timer0_Event_Invok)(void);
 
 void showRecvStr(const unsigned char* str)
@@ -58,7 +58,7 @@ void Timer0Interrupt() interrupt 1
 	TL0 = 0x00;
 	//add your code here!
 	Timer0Counter++;
-	if (Timer0Counter > 200)
+	if (Timer0Counter > (10 * 100))
 	{
 		Timer0Counter = 0;
 		(*Timer0_Event_Invok)();

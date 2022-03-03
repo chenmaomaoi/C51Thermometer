@@ -68,7 +68,10 @@ namespace ThermometerServer
 
                     logText.Text += $"T:{SHT_30_T} RH:{SHT_30_RH} \n";
                 }
-
+                else
+                {
+                    logText.Text += $"{Encoding.ASCII.GetString(e.Data, e.DataOffset, e.DataLength)}\n";
+                }
             }));
         }
 
@@ -85,6 +88,11 @@ namespace ThermometerServer
                 Global.tcpServer.Listen();
                 btnControl.Content = "停止服务";
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Global.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
         }
     }
 }

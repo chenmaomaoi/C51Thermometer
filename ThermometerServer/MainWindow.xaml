@@ -15,18 +15,18 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
+
         <Grid Height="{Binding Height, ElementName=txtPort}"
               HorizontalAlignment="Left"
               VerticalAlignment="Top"
               Margin="10,10,0,0">
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
+
             <TextBox x:Name="txtPort"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      VerticalAlignment="Bottom"
@@ -43,7 +43,7 @@
                     </StackPanel>
                 </materialDesign:HintAssist.Hint>
             </TextBox>
-            
+
             <Button x:Name="btnControl"
                     Content="开启服务"
                     HorizontalAlignment="Right"
@@ -52,15 +52,16 @@
                     Grid.Column="2"
                     Cursor="Hand"
                     Click="btnControl_Click"/>
-            
+
         </Grid>
 
         <materialDesign:Card Grid.Row="1"
                              materialDesign:ShadowAssist.ShadowDepth="Depth1"
                              Margin="10">
-            
+
             <TextBlock x:Name="logText"/>
         </materialDesign:Card>
-        
+        <Button Content="读取数据" HorizontalAlignment="Left" Height="26" Margin="188,15,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
+
     </Grid>
 </Window>

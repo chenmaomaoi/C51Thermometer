@@ -3,7 +3,7 @@
 /// <summary>
 /// 温湿度原始数据
 /// </summary>
-unsigned char SHT_30_RAW_Data[6];
+unsigned char SHT_30_RAW_Data[7];
 
 /// <summary>
 /// 温度
@@ -49,6 +49,7 @@ bit SHT_30_DataProcess()
 	SHT_30_RAW_Data[3] = IIC_Read_Byte(1);
 	SHT_30_RAW_Data[4] = IIC_Read_Byte(1);
 	SHT_30_RAW_Data[5] = IIC_Read_Byte(0);
+	SHT_30_RAW_Data[6] = '\0';
 	IIC_Stop();
 
 	if (CRC_8_Check(&SHT_30_RAW_Data[0], 2, SHT_30_RAW_Data[2]) && CRC_8_Check(&SHT_30_RAW_Data[3], 2, SHT_30_RAW_Data[5]))

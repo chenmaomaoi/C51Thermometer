@@ -23,7 +23,7 @@ bit SHT_30_DataProcess();
 /// <summary>
 /// SHT 30 原始数据
 /// </summary>
-extern unsigned char SHT_30_RAW_Data[7];
+extern unsigned char SHT_30_RAW_Data[6];
 
 /// <summary>
 /// SHT 30 温度

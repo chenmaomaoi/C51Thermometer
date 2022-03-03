@@ -1,0 +1,66 @@
+﻿<Window x:Class="ThermometerServer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ThermometerServer"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Width="790"
+        Height="330">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Height="{Binding Height, ElementName=txtPort}"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top"
+              Margin="10,10,0,0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <TextBox x:Name="txtPort"
+                     Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                     VerticalAlignment="Bottom"
+                     materialDesign:TextFieldAssist.HasClearButton="True"
+                     InputScope="Number"
+                     Text="1234"
+                     Cursor="IBeam"
+                     HorizontalAlignment="Left"
+                     IsEnabled="False">
+                <materialDesign:HintAssist.Hint>
+                    <StackPanel Orientation="Horizontal" Margin="-2 0 0 0">
+                        <materialDesign:PackIcon Kind="SwapVerticalBold" />
+                        <TextBlock Text="端口" />
+                    </StackPanel>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            
+            <Button x:Name="btnControl"
+                    Content="开启服务"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Height="{Binding Height, ElementName=txtPort}"
+                    Grid.Column="2"
+                    Cursor="Hand"
+                    Click="btnControl_Click"/>
+            
+        </Grid>
+
+        <materialDesign:Card Grid.Row="1"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                             Margin="10">
+            
+            <TextBlock x:Name="logText"/>
+        </materialDesign:Card>
+        
+    </Grid>
+</Window>

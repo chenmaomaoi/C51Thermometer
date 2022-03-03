@@ -382,11 +382,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>LCD_1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD_1602.c</FilePath>
-            </File>
-            <File>
               <FileName>IIC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\IIC.c</FilePath>
@@ -411,11 +406,6 @@
         <Group>
           <GroupName>Header Files</GroupName>
           <Files>
-            <File>
-              <FileName>LCD_1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LCD_1602.h</FilePath>
-            </File>
             <File>
               <FileName>IIC.h</FileName>
               <FileType>5</FileType>

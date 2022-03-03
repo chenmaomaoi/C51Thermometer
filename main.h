@@ -17,9 +17,9 @@
 #include "IIC.h"
 #endif // !_IIC_H
 
-#ifndef _LCD_1602_H
-#include "LCD_1602.h"
-#endif // !_LCD_1602_H
+//#ifndef _LCD_1602_H
+//#include "LCD_1602.h"
+//#endif // !_LCD_1602_H
 
 #ifndef _SHT_30_H
 #include "SHT_30.h"

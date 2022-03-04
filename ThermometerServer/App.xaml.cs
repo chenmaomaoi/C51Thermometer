@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Cowboy.Sockets;
+using ThermometerServer.DB;
 
 namespace ThermometerServer
 {
@@ -21,6 +22,19 @@ namespace ThermometerServer
                 FrameBuilder = new RawBufferFrameBuilder()
             });
             //todo:连接SQLite数据库，EF
+            var context = new BaseDBContext();
+
+            var s = new RAWData
+            {
+                GUID = Guid.NewGuid().ToString(),
+                T = 12,
+                RH = 55,
+                LastUpdateTime = DateTime.Now
+            };
+
+            context.RawData.Add(s);
+            context.SaveChanges();
+
 
             new MainWindow().Show();
         }

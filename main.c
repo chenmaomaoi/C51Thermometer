@@ -11,10 +11,14 @@ void delay(void)   //100us
 
 void recvdStr(const unsigned char* str)
 {
-	if (str[0] == 'C' && str[1] == ':')
+	if (str[0] == ':')
 	{
-		//C: 指令解析
-		sendRAWDataFlag = 1;
+		//指令解析
+		if (str[1] == 'R')
+		{
+			//刷新数据
+			sendRAWDataFlag = 1;
+		}
 	}
 }
 

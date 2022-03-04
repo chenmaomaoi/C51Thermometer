@@ -61,7 +61,7 @@
 
             <TextBlock x:Name="logText"/>
         </materialDesign:Card>
-        <Button Content="读取数据" HorizontalAlignment="Left" Height="26" Margin="188,15,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
+        <Button x:Name="bbb" IsEnabled="False" Content="读取数据" HorizontalAlignment="Left" Height="26" Margin="188,15,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
 
     </Grid>
 </Window>

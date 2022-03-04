@@ -1,8 +1,5 @@
 ﻿using SQLite.CodeFirst;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -21,26 +18,6 @@ namespace ThermometerServer.DB
         }
 
         //在此处添加实体
-        public DbSet<RAWData> RawData { get; set; }
-    }
-
-    [Table("T_RAWData")]
-    public class RAWData
-    {
-        [Key]
-        [Required]
-        public string GUID { get; set; }
-
-        [Required]
-        public DateTime LastUpdateTime { get; set; }
-
-        [Required]
-        public Int16 T { get; set; }
-
-        [Required]
-        public Int16 RH { get; set; }
-
-        [Required]
-        public bool Effective { get; set; }
+        public DbSet<ApplicationDB> ApplicationDB { get; set; }
     }
 }

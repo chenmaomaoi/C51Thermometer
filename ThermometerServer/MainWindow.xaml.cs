@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Cowboy.Sockets;
 using ThermometerServer.Utils;
+using System.Timers;
+using ThermometerServer.DB;
 
 namespace ThermometerServer
 {
@@ -22,24 +24,50 @@ namespace ThermometerServer
     /// </summary>
     public partial class MainWindow : Window
     {
+        Timer timer;
+        BaseDBContext dbContext;
+
         public MainWindow()
         {
             InitializeComponent();
             Global.tcpServer.ClientConnected += TcpServer_ClientConnected;
             Global.tcpServer.ClientDisconnected += TcpServer_ClientDisconnected;
             Global.tcpServer.ClientDataReceived += TcpServer_ClientDataReceived;
+
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.AutoReset = true;
+            timer.Elapsed += Timer_Elapsed;
+
+            dbContext = new BaseDBContext();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            if (Global.tcpServer.IsListening && Global.tcpServer.SessionCount > 0)
+            {
+                Global.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
+            }
         }
 
         private void TcpServer_ClientConnected(object sender, TcpClientConnectedEventArgs e)
         {
-            this.Dispatcher.Invoke(new Action(() =>
-            logText.Text += "TCP Connect:" + e.Session + "\n"));
+            timer.Start();
+            this.Dispatcher.Invoke(new Action(() => {
+                logText.Text += "TCP Connect:" + e.Session + "\n";
+                bbb.IsEnabled = true;}));
         }
 
         private void TcpServer_ClientDisconnected(object sender, TcpClientDisconnectedEventArgs e)
         {
-            this.Dispatcher.Invoke(new Action(() =>
-            logText.Text += "TCP Disconnect:" + e.Session + "\n"));
+            if (Global.tcpServer.SessionCount < 1)
+            {
+                timer.Stop();
+            }
+            this.Dispatcher.Invoke(new Action(() => {
+                logText.Text += "TCP Disconnect:" + e.Session + "\n";
+                bbb.IsEnabled = false;
+            }));
         }
 
         private void TcpServer_ClientDataReceived(object sender, TcpClientDataReceivedEventArgs e)
@@ -64,9 +92,22 @@ namespace ThermometerServer
                     float SHT_30_T = 175.0f * (float)buffer[0] / 65535.0f - 45.0f;
                     float SHT_30_RH = 100.0f * buffer[1] / 65535.0f;
 
+                    var v = new ApplicationDB
+                    {
+                        GUID = Guid.NewGuid().ToString(),
+                        LastUpdateTime = DateTime.Now,
+                        T = buffer[0],
+                        Tf = SHT_30_T,
+                        RH = buffer[1],
+                        RHf = SHT_30_RH
+                    };
+
+                    dbContext.ApplicationDB.Add(v);
+                    dbContext.SaveChanges();
+
                     //string text = Encoding.ASCII.GetString(e.Data, e.DataOffset, e.DataLength);
 
-                    logText.Text += $"T:{SHT_30_T} RH:{SHT_30_RH} \n";
+                    logText.Text = $"T:{SHT_30_T} RH:{SHT_30_RH} \n";
                 }
                 else
                 {

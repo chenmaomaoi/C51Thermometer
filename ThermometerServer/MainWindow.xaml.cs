@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Cowboy.Sockets;
-using ThermometerServer.Utils;
 using System.Timers;
 using ThermometerServer.DB;
+using ThermometerServer.DB.Domain;
 
 namespace ThermometerServer
 {
@@ -30,9 +30,9 @@ namespace ThermometerServer
         public MainWindow()
         {
             InitializeComponent();
-            Global.tcpServer.ClientConnected += TcpServer_ClientConnected;
-            Global.tcpServer.ClientDisconnected += TcpServer_ClientDisconnected;
-            Global.tcpServer.ClientDataReceived += TcpServer_ClientDataReceived;
+            App.tcpServer.ClientConnected += TcpServer_ClientConnected;
+            App.tcpServer.ClientDisconnected += TcpServer_ClientDisconnected;
+            App.tcpServer.ClientDataReceived += TcpServer_ClientDataReceived;
 
             timer = new Timer();
             timer.Interval = 1000;
@@ -44,9 +44,9 @@ namespace ThermometerServer
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            if (Global.tcpServer.IsListening && Global.tcpServer.SessionCount > 0)
+            if (App.tcpServer.IsListening && App.tcpServer.SessionCount > 0)
             {
-                Global.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
+                App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
             }
         }
 
@@ -60,7 +60,7 @@ namespace ThermometerServer
 
         private void TcpServer_ClientDisconnected(object sender, TcpClientDisconnectedEventArgs e)
         {
-            if (Global.tcpServer.SessionCount < 1)
+            if (App.tcpServer.SessionCount < 1)
             {
                 timer.Stop();
             }
@@ -75,10 +75,9 @@ namespace ThermometerServer
             this.Dispatcher.Invoke(new Action(() =>
             {
                 //处理数据
-                byte[] b1 = { e.Data[e.DataOffset], e.Data[e.DataOffset + 1] };
-                byte[] b2 = { e.Data[e.DataOffset + 3], e.Data[e.DataOffset + 4] };
 
-                if (Utils.CRC_8.CRC_8_Check(b1, 2, e.Data[e.DataOffset + 2]) && Utils.CRC_8.CRC_8_Check(b2, 2, e.Data[e.DataOffset + 5]))
+                if (Utils.CRC_8.CRC_8_Check(new byte[] { e.Data[e.DataOffset], e.Data[e.DataOffset + 1] }, 2, e.Data[e.DataOffset + 2])
+                 && Utils.CRC_8.CRC_8_Check(new byte[] { e.Data[e.DataOffset + 3], e.Data[e.DataOffset + 4] }, 2, e.Data[e.DataOffset + 5]))
                 {
                     UInt16[] buffer = new UInt16[2];
                     buffer[0] = e.Data[e.DataOffset];
@@ -89,10 +88,10 @@ namespace ThermometerServer
                     buffer[1] <<= 8;
                     buffer[1] |= e.Data[e.DataOffset + 4];
 
-                    float SHT_30_T = 175.0f * (float)buffer[0] / 65535.0f - 45.0f;
+                    float SHT_30_T = (175.0f * buffer[0] / 65535.0f) - 45.0f;
                     float SHT_30_RH = 100.0f * buffer[1] / 65535.0f;
 
-                    var v = new ApplicationDB
+                    var v = new DB.Domain.ApplicationDB
                     {
                         GUID = Guid.NewGuid().ToString(),
                         LastUpdateTime = DateTime.Now,
@@ -102,8 +101,21 @@ namespace ThermometerServer
                         RHf = SHT_30_RH
                     };
 
-                    dbContext.ApplicationDB.Add(v);
-                    dbContext.SaveChanges();
+                    App.UnitWork.Add(v);
+                    App.UnitWork.Save();
+
+                    //dbContext.ApplicationDB.Add(new DB.Domain.ApplicationDB
+                    //{
+                    //    GUID = Guid.NewGuid().ToString(),
+                    //    LastUpdateTime = DateTime.Now,
+                    //    T = buffer[0],
+                    //    Tf = SHT_30_T,
+                    //    RH = buffer[1],
+                    //    RHf = SHT_30_RH
+                    //});
+
+
+                    //dbContext.SaveChanges();
 
                     //string text = Encoding.ASCII.GetString(e.Data, e.DataOffset, e.DataLength);
 
@@ -119,21 +131,21 @@ namespace ThermometerServer
 
         private void btnControl_Click(object sender, RoutedEventArgs e)
         {
-            if (Global.tcpServer.IsListening)
+            if (App.tcpServer.IsListening)
             {
-                Global.tcpServer.Shutdown();
+                App.tcpServer.Shutdown();
                 btnControl.Content = "开始服务";
             }
             else
             {
-                Global.tcpServer.Listen();
+                App.tcpServer.Listen();
                 btnControl.Content = "停止服务";
             }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Global.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
+            App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
         }
     }
 }

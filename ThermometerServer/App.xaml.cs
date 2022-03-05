@@ -15,12 +15,18 @@ namespace ThermometerServer
     /// </summary>
     public partial class App : Application
     {
+        public static TcpSocketServer tcpServer { get; set; }
+
+        public static UnitWork<BaseDBContext> UnitWork { get; set; }
+
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Global.tcpServer = new TcpSocketServer(1234, new TcpSocketServerConfiguration
+            tcpServer = new TcpSocketServer(1234, new TcpSocketServerConfiguration
             {
                 FrameBuilder = new RawBufferFrameBuilder()
             });
+
+            UnitWork = new UnitWork<BaseDBContext>(new BaseDBContext());
 
             new MainWindow().Show();
         }

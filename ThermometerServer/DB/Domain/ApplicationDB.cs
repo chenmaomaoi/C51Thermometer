@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ThermometerServer.DB
+namespace ThermometerServer.DB.Domain
 {
     [Table(nameof(ApplicationDB))]
     public class ApplicationDB

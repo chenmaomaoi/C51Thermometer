@@ -13,18 +13,21 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <Grid Height="{Binding Height, ElementName=txtPort}"
               HorizontalAlignment="Left"
               VerticalAlignment="Top"
-              Margin="10,10,0,0">
+              Margin="10,10,0,5">
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="5"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <TextBox x:Name="txtPort"
@@ -53,15 +56,38 @@
                     Cursor="Hand"
                     Click="btnControl_Click"/>
 
+            <Button x:Name="btnGet8052Data"
+                    Grid.Column="4"
+                    IsEnabled="False"
+                    Content="从单片机读取数据"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Height="{Binding Height, ElementName=txtPort}"
+                    Click="btnGet8052Data_Click"/>
         </Grid>
 
-        <materialDesign:Card Grid.Row="1"
-                             materialDesign:ShadowAssist.ShadowDepth="Depth1"
-                             Margin="10">
+        <WebBrowser x:Name="ChartWebBrowser" Grid.Row="1"></WebBrowser>
 
-            <TextBlock x:Name="logText"/>
-        </materialDesign:Card>
-        <Button x:Name="bbb" IsEnabled="False" Content="读取数据" HorizontalAlignment="Left" Height="26" Margin="188,15,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
 
+            <materialDesign:Card Grid.Column="0"
+                                 materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                                 Margin="10">
+                <TextBlock x:Name="logText"/>
+            </materialDesign:Card>
+
+            <materialDesign:PackIcon x:Name="icoDataErr"
+                                     Grid.Column="3"
+                                     Kind="AlarmLight"
+                                     Foreground="Red"
+                                     HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Visibility="Hidden" />
+
+        </Grid>
     </Grid>
 </Window>

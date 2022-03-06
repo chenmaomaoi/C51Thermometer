@@ -16,6 +16,7 @@ using Cowboy.Sockets;
 using System.Timers;
 using ThermometerServer.DB;
 using ThermometerServer.DB.Domain;
+using System.IO;
 
 namespace ThermometerServer
 {
@@ -25,7 +26,6 @@ namespace ThermometerServer
     public partial class MainWindow : Window
     {
         Timer timer;
-        BaseDBContext dbContext;
 
         public MainWindow()
         {
@@ -34,28 +34,28 @@ namespace ThermometerServer
             App.tcpServer.ClientDisconnected += TcpServer_ClientDisconnected;
             App.tcpServer.ClientDataReceived += TcpServer_ClientDataReceived;
 
-            timer = new Timer();
-            timer.Interval = 1000;
-            timer.AutoReset = true;
+            timer = new Timer
+            {
+                Interval = 1000,
+                AutoReset = true
+            };
             timer.Elapsed += Timer_Elapsed;
-
-            dbContext = new BaseDBContext();
+            ChartWebBrowser.Navigate(new Uri(Directory.GetCurrentDirectory() + "/Chart.html"));
         }
 
         private void Timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            if (App.tcpServer.IsListening && App.tcpServer.SessionCount > 0)
-            {
-                App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
-            }
+            btnGet8052Data_Click(sender, new RoutedEventArgs());
         }
 
         private void TcpServer_ClientConnected(object sender, TcpClientConnectedEventArgs e)
         {
             timer.Start();
-            this.Dispatcher.Invoke(new Action(() => {
-                logText.Text += "TCP Connect:" + e.Session + "\n";
-                bbb.IsEnabled = true;}));
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                logText.Text += "TCP Connect:" + e.Session;
+                btnGet8052Data.IsEnabled = true;
+            }));
         }
 
         private void TcpServer_ClientDisconnected(object sender, TcpClientDisconnectedEventArgs e)
@@ -64,9 +64,10 @@ namespace ThermometerServer
             {
                 timer.Stop();
             }
-            this.Dispatcher.Invoke(new Action(() => {
-                logText.Text += "TCP Disconnect:" + e.Session + "\n";
-                bbb.IsEnabled = false;
+            this.Dispatcher.Invoke(new Action(() =>
+            {
+                logText.Text = "TCP Disconnect:" + e.Session;
+                btnGet8052Data.IsEnabled = false;
             }));
         }
 
@@ -91,7 +92,7 @@ namespace ThermometerServer
                     float SHT_30_T = (175.0f * buffer[0] / 65535.0f) - 45.0f;
                     float SHT_30_RH = 100.0f * buffer[1] / 65535.0f;
 
-                    var v = new DB.Domain.ApplicationDB
+                    var v = new DB.Domain.MainTable
                     {
                         GUID = Guid.NewGuid().ToString(),
                         LastUpdateTime = DateTime.Now,
@@ -104,30 +105,16 @@ namespace ThermometerServer
                     App.UnitWork.Add(v);
                     App.UnitWork.Save();
 
-                    //dbContext.ApplicationDB.Add(new DB.Domain.ApplicationDB
-                    //{
-                    //    GUID = Guid.NewGuid().ToString(),
-                    //    LastUpdateTime = DateTime.Now,
-                    //    T = buffer[0],
-                    //    Tf = SHT_30_T,
-                    //    RH = buffer[1],
-                    //    RHf = SHT_30_RH
-                    //});
-
-
-                    //dbContext.SaveChanges();
-
-                    //string text = Encoding.ASCII.GetString(e.Data, e.DataOffset, e.DataLength);
-
-                    logText.Text = $"T:{SHT_30_T} RH:{SHT_30_RH} \n";
+                    logText.Text = $"T:{SHT_30_T} RH:{SHT_30_RH}";
+                    icoDataErr.Visibility = Visibility.Hidden;
                 }
                 else
                 {
-                    logText.Text += $"{Encoding.ASCII.GetString(e.Data, e.DataOffset, e.DataLength)}\n";
+                    logText.Text = $"{Encoding.ASCII.GetString(e.Data, e.DataOffset, e.DataLength)}";
+                    icoDataErr.Visibility = Visibility.Visible;
                 }
             }));
         }
-
 
         private void btnControl_Click(object sender, RoutedEventArgs e)
         {
@@ -143,9 +130,12 @@ namespace ThermometerServer
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnGet8052Data_Click(object sender, RoutedEventArgs e)
         {
-            App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
+            if (App.tcpServer.IsListening && App.tcpServer.SessionCount > 0)
+            {
+                App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
+            }
         }
     }
 }

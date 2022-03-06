@@ -19,6 +19,6 @@ namespace ThermometerServer.DB
         }
 
         //在此处添加实体
-        public DbSet<ApplicationDB> ApplicationDB { get; set; }
+        public DbSet<MainTable> ApplicationDB { get; set; }
     }
 }

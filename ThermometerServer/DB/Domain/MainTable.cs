@@ -4,10 +4,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ThermometerServer.DB.Domain
 {
-    [Table(nameof(ApplicationDB))]
-    public class ApplicationDB
+    [Table(nameof(MainTable))]
+    public class MainTable
     {
-        public ApplicationDB()
+        public MainTable()
         {
             GUID = Guid.NewGuid().ToString();
             LastUpdateTime = DateTime.Now;

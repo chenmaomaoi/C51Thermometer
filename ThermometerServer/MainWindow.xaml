@@ -89,5 +89,6 @@
                                      Visibility="Hidden" />
 
         </Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="346,0,0,0" VerticalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Window>

@@ -102,6 +102,7 @@ namespace ThermometerServer
                         RHf = SHT_30_RH
                     };
 
+                    ChartWebBrowser.InvokeScript("jsPushData", v.LastUpdateTime.ToString(), v.Tf.ToString("0.0#"), v.RHf.ToString("0.0#"));
                     App.UnitWork.Add(v);
                     App.UnitWork.Save();
 
@@ -136,6 +137,11 @@ namespace ThermometerServer
             {
                 App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ChartWebBrowser.InvokeScript("jsPushData", "x", 10, 20);
         }
     }
 }

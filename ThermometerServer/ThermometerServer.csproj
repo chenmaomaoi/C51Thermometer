@@ -185,7 +185,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Chart.html">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\ECharts\chart\bar.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

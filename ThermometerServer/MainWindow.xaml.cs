@@ -89,8 +89,8 @@ namespace ThermometerServer
                     buffer[1] <<= 8;
                     buffer[1] |= e.Data[e.DataOffset + 4];
 
-                    float SHT_30_T = (float)Math.Round((175.0f * buffer[0] / 65535.0f) - 45.0f, 2);
-                    float SHT_30_RH = (float)Math.Round(100.0f * buffer[1] / 65535.0f, 2);
+                    float SHT_30_T = (175.0f * buffer[0] / 65535.0f) - 45.0f;
+                    float SHT_30_RH = 100.0f * buffer[1] / 65535.0f;
 
                     var v = new DB.Domain.MainTable
                     {
@@ -102,7 +102,7 @@ namespace ThermometerServer
                         RHf = SHT_30_RH
                     };
 
-                    ChartWebBrowser.InvokeScript("jsPushData", v.LastUpdateTime.ToString(), v.Tf, v.RHf);
+                    ChartWebBrowser.InvokeScript("jsPushData", v.LastUpdateTime.ToString(), Math.Round(v.Tf, 2), Math.Round(v.RHf));
                     App.UnitWork.Add(v);
                     App.UnitWork.Save();
 

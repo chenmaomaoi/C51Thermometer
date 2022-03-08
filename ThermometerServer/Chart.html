@@ -79,9 +79,7 @@
                         ]
                     },
                     markLine: {
-                        data: [
-                            { type: 'average', name: 'Avg' }
-                        ]
+                        data: [{ type: 'average', name: 'Avg' }]
                     }
                 }
             ]
@@ -97,7 +95,7 @@
         }
 
         function jsPushData(x, y, z) {
-            option.xAxis[0].data.push(x);
+            option.xAxis[0].data.push(x.replace(' ', '\n'));
             option.series[0].data.push(y);
             option.series[1].data.push(z);
             myChart.setOption(option);

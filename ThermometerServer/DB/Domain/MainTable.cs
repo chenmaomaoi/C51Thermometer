@@ -24,12 +24,8 @@ namespace ThermometerServer.DB.Domain
         [Required]
         public int T { get; set; }
 
-        public float Tf { get; set; }
-
         [Required]
         public int RH { get; set; }
-
-        public float RHf { get; set; }
 
         public bool Effective { get; set; }
     }

@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F24EDAC7-CA7B-4D90-A887-B620D57C5988}</ProjectGuid>
+    <ProjectGuid>{8E195CE2-9FB5-4DEF-B71D-763D54769351}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebAPI.Tests</RootNamespace>
@@ -25,7 +25,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\WebAPI.Tests.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -111,7 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebAPI\WebAPI.csproj">
-      <Project>{56AC7503-1260-4FA2-970C-88A2230F75B7}</Project>
+      <Project>{1511A825-B4E6-4C51-B954-8B98706D89F5}</Project>
       <Name>WebAPI</Name>
     </ProjectReference>
   </ItemGroup>

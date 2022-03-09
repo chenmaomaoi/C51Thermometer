@@ -9,19 +9,35 @@ namespace WebAPI.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
+        /// <summary>
+        /// 默认Get方法
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("api/Get")]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/5
+        /// <summary>
+        /// 带有ID的Get方法
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>value+id</returns>
+        [HttpGet]
+        [Route("api/Get")]
         public string Get(int id)
         {
-            return "value";
+            return "value" + id;
         }
 
-        // POST api/values
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        [HttpPost]
+        [Route("api/Post")]
         public void Post([FromBody] string value)
         {
         }

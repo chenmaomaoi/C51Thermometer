@@ -38,15 +38,17 @@ namespace WebAPI
                 TokenEndpointPath = new PathString("/Token"),
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
+
+                //todo:设置token过期时间
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                //在生产模式下设 AllowInsecureHttp = false
+                //todo:在生产模式下设 AllowInsecureHttp = false
                 AllowInsecureHttp = true
             };
 
             // 使应用程序可以使用不记名令牌来验证用户
             app.UseOAuthBearerTokens(OAuthOptions);
 
-            // 取消注释以下行即可允许使用第三方登录提供程序登录
+            //todo:取消注释以下行即可允许使用第三方登录提供程序登录
             //app.UseMicrosoftAccountAuthentication(
             //    clientId: "",
             //    clientSecret: "");

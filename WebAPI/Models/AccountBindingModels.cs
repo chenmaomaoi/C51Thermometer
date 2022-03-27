@@ -50,6 +50,19 @@ namespace WebAPI.Models
         public string ConfirmPassword { get; set; }
     }
 
+    public class LoginBingdingModel
+    {
+        [Required]
+        [Display(Name = "账号&电子邮件")]
+        public string UserName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "{0} 至少包含 {2} 个字符。", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "密码")]
+        public string Password { get; set; }
+    }
+
     public class RegisterExternalBindingModel
     {
         [Required]

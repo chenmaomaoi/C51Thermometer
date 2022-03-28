@@ -6,9 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Cowboy.Sockets;
-using ThermometerServer.DB;
+using WebAPI.DB;
 
-namespace ThermometerServer
+namespace WebAPI
 {
     /// <summary>
     /// App.xaml 的交互逻辑

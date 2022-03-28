@@ -14,11 +14,11 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Cowboy.Sockets;
 using System.Timers;
-using ThermometerServer.DB;
-using ThermometerServer.DB.Domain;
+using WebAPI.DB;
+using WebAPI.DB.Domain;
 using System.IO;
 
-namespace ThermometerServer
+namespace WebAPI
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -133,13 +133,8 @@ namespace ThermometerServer
         {
             if (App.tcpServer.IsListening && App.tcpServer.SessionCount > 0)
             {
-                App.tcpServer.Broadcast(Encoding.Default.GetBytes("C:"));
+                App.tcpServer.Broadcast(Encoding.Default.GetBytes(DateTime.Now.ToString("g")));
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ChartWebBrowser.InvokeScript("jsPushData", "x", 10, 20);
         }
     }
 }

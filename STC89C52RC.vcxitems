@@ -19,6 +19,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SHT_30.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Timer_0.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UART.c" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +32,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)SHT_30.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)string.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Timer_0.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UART.h" />
   </ItemGroup>
 </Project>

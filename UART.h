@@ -9,6 +9,7 @@
 #include "string.h"
 #endif // !_STRING_H
 
+extern void (*UART_Event_RecvdStr)(const unsigned char* str);
 
 /// <summary>
 /// 串口通信初始化
@@ -28,5 +29,4 @@ void UART_SendByte(unsigned char dat);
 /// <param name="str"></param>
 void UART_SendString(const unsigned char* str);
 
-extern void (*UART_Event_RecvdStr)(const unsigned char* str);
 #endif

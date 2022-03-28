@@ -21,7 +21,7 @@ void SHT_30_Init();
 bit SHT_30_DataProcess();
 
 /// <summary>
-/// SHT 30 原始数据
+/// SHT 30 原始数据(实际为SHT_30_RAW_Data[6])
 /// </summary>
 extern unsigned char SHT_30_RAW_Data[7];
 

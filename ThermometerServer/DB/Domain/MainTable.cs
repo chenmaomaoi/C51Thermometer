@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ThermometerServer.DB.Domain
+namespace WebAPI.DB.Domain
 {
     [Table(nameof(MainTable))]
     public class MainTable

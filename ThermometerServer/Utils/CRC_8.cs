@@ -1,4 +1,4 @@
-﻿namespace ThermometerServer.Utils
+﻿namespace WebAPI.Utils
 {
     public static class CRC_8
     {

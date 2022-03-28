@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ThermometerServer.DB.Interface
+namespace WebAPI.DB.Interface
 {
     public interface IUnitWork<U> where U : BaseDBContext
     {

@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ThermometerServer.DB.Domain;
+using WebAPI.DB.Domain;
 
-namespace ThermometerServer.DB
+namespace WebAPI.DB
 {
     public class BaseDBContext : DbContext
     {

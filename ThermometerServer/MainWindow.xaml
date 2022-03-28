@@ -1,10 +1,10 @@
-﻿<Window x:Class="ThermometerServer.MainWindow"
+﻿<Window x:Class="WebAPI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:local="clr-namespace:ThermometerServer"
+        xmlns:local="clr-namespace:WebAPI"
         mc:Ignorable="d"
         Title="MainWindow"
         Width="790"
@@ -89,6 +89,5 @@
                                      Visibility="Hidden" />
 
         </Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="346,0,0,0" VerticalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Window>

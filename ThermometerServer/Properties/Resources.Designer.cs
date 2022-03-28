@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ThermometerServer.Properties
+namespace WebAPI.Properties
 {
 
 

@@ -402,11 +402,6 @@
               <FilePath>.\SHT_30.c</FilePath>
             </File>
             <File>
-              <FileName>LCD_1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD_1602.c</FilePath>
-            </File>
-            <File>
               <FileName>Timer_0.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Timer_0.c</FilePath>
@@ -440,11 +435,6 @@
               <FileName>SHT_30.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\SHT_30.h</FilePath>
-            </File>
-            <File>
-              <FileName>LCD_1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LCD_1602.h</FilePath>
             </File>
             <File>
               <FileName>Timer_0.h</FileName>

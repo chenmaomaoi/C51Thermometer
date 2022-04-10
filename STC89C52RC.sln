@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "STC89C52RC", "STC89C52RC.vcxitems", "{CE5247BB-3C67-46B7-ADEF-881CAA38C8DB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C52", "C52\C52.vcxitems", "{CE5247BB-3C67-46B7-ADEF-881CAA38C8DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThermometerServer", "ThermometerServer\ThermometerServer.csproj", "{810EC7F3-4C39-4751-A514-131B83CFAD65}"
 EndProject

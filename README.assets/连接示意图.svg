@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 连接示意图.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="2.86335in" height="0.862369in"
+		viewBox="0 0 206.161 62.0906" xml:space="preserve" color-interpolation-filters="sRGB" class="st11">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:#41719c;stroke-width:0.75}
+		.st2 {fill:#41719c;font-family:Calibri;font-size:0.833336em}
+		.st3 {font-family:黑体;font-size:1em}
+		.st4 {fill:#41719c;font-family:黑体;font-size:0.833336em}
+		.st5 {font-size:1em}
+		.st6 {marker-start:url(#mrkr5-19);stroke:#4672c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st7 {fill:#4672c4;fill-opacity:1;stroke:#4672c4;stroke-opacity:1;stroke-width:0.28409090909091}
+		.st8 {marker-end:url(#mrkr5-25);stroke:#4672c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st9 {fill:none;stroke:none;stroke-width:0.25}
+		.st10 {fill:#4672c4;font-family:Calibri;font-size:1.00001em}
+		.st11 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<defs id="Markers">
+		<g id="lend5">
+			<path d="M 2 1 L 0 0 L 1.98117 -0.993387 C 1.67173 -0.364515 1.67301 0.372641 1.98465 1.00043 " style="stroke:none"/>
+		</g>
+		<marker id="mrkr5-19" class="st7" v:arrowType="5" v:arrowSize="2" v:setback="5.8" refX="5.8" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(3.52) "/>
+		</marker>
+		<marker id="mrkr5-25" class="st7" v:arrowType="5" v:arrowSize="2" v:setback="6.16" refX="-6.16" orient="auto"
+				markerUnits="strokeWidth" overflow="visible">
+			<use xlink:href="#lend5" transform="scale(-3.52,-3.52) "/>
+		</marker>
+	</defs>
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
+				v:shadowOffsetY="-8.50394"/>
+		<v:layer v:name="连接线" v:index="0"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(94.2933,-0.75)">
+			<title>矩形</title>
+			<desc>51单片机最小系统</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(Basic_M.vssx)"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="25.2283" cy="31.7953" width="50.46" height="60.5906"/>
+			<rect x="0" y="1.5" width="50.4567" height="60.5906" class="st1"/>
+			<text x="5.16" y="28.47" class="st2" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>51<tspan class="st3">单片机</tspan><tspan
+						x="5.23" dy="1.331em" class="st3">最小系统</tspan></text>		</g>
+		<g id="shape2-6" v:mID="2" v:groupContext="shape" transform="translate(166.01,-9.78543)">
+			<title>矩形.2</title>
+			<desc>温湿度传感器</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(Basic_M.vssx)"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="19.7008" cy="40.8307" width="39.41" height="42.5197"/>
+			<rect x="0" y="19.5709" width="39.4016" height="42.5197" class="st1"/>
+			<text x="4.7" y="37.17" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>温湿度<tspan x="4.7"
+						dy="1.298em" class="st5">传感器</tspan></text>		</g>
+		<g id="shape3-10" v:mID="3" v:groupContext="shape" transform="translate(0.75,-13.3287)">
+			<title>矩形.3</title>
+			<desc>低功耗蓝牙模块</desc>
+			<v:userDefs>
+				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
+				<v:ud v:nameU="visMasterStencil" v:prompt="" v:val="VT4(Basic_M.vssx)"/>
+			</v:userDefs>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="29.9055" cy="44.374" width="59.82" height="35.4331"/>
+			<rect x="0" y="26.6575" width="59.811" height="35.4331" class="st1"/>
+			<text x="4.91" y="40.72" class="st4" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>低功耗蓝牙<tspan x="19.91"
+						dy="1.298em" class="st5">模块</tspan></text>		</g>
+		<g id="shape5-14" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(94.2933,-23.9587)">
+			<title>动态连接线</title>
+			<path d="M-5.8 55 L-6.16 55 L-33.73 55" class="st6"/>
+		</g>
+		<g id="shape6-20" v:mID="6" v:groupContext="shape" v:layerMember="0" transform="translate(166.01,-23.9587)">
+			<title>动态连接线.6</title>
+			<path d="M0 55 L-15.1 55" class="st8"/>
+		</g>
+		<g id="shape7-26" v:mID="7" v:groupContext="shape" transform="translate(139.648,-32.3051)">
+			<title>工作表.7</title>
+			<desc>IIC</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="14.3105" cy="52.0906" width="28.63" height="20"/>
+			<rect x="0" y="42.0906" width="28.6209" height="20" class="st9"/>
+			<text x="8.09" y="55.69" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>IIC</text>		</g>
+		<g id="shape10-29" v:mID="10" v:groupContext="shape" transform="translate(57.7264,-28.7618)">
+			<title>工作表.10</title>
+			<desc>UART</desc>
+			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
+			<v:textRect cx="19.7008" cy="52.0906" width="39.41" height="20"/>
+			<rect x="0" y="42.0906" width="39.4016" height="20" class="st9"/>
+			<text x="6.2" y="55.69" class="st10" v:langID="2052"><v:paragraph v:horizAlign="1"/><v:tabList/>UART</text>		</g>
+	</g>
+</svg>

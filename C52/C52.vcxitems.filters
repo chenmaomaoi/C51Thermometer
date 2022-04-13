@@ -17,9 +17,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -38,9 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h">
@@ -62,9 +56,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h">
-      <Filter>External Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)Timer_0.h">

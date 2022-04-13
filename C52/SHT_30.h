@@ -1,5 +1,5 @@
-#ifndef _SHT_30
-#define _SHT_30
+#ifndef _SHT_30_H
+#define _SHT_30_H
 
 #ifndef _IIC_H
 #include "IIC.h"
@@ -35,4 +35,4 @@ extern float SHT_30_T;
 /// </summary>
 extern float SHT_30_RH;
 
-#endif // !__SHT_30
+#endif // !_SHT_30_H

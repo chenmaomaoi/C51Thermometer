@@ -9,11 +9,11 @@
 #include "intrins.h"
 #endif // !_INTRINS_H
 
-sbit IIC_SCL = P2 ^ 0;
-sbit IIC_SDA = P2 ^ 1;
+sbit IIC_SCL = P2 ^ 0;	//IIC时钟引脚
+sbit IIC_SDA = P2 ^ 1;	//IIC数据引脚
 
 /// <summary>
-/// IIC初始化
+/// IIC初始化；IIC_SCL为P2.0，IIC_SDA为P2.1
 /// </summary>
 void IIC_Init();
 

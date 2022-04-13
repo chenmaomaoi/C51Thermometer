@@ -1,7 +1,7 @@
 #include "main.h"
 
-char temp_ch[24];
-sbit BLEState = P3 ^ 2;
+char temp_ch[24];	//临时存储要发送的数据
+sbit BLEState = P3 ^ 2;	//BLE连接状态
 
 void Timer_0_OnElapsed()
 {

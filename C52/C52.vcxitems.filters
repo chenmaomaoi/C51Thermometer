@@ -61,5 +61,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Timer_0.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
+      <Filter>External Dependencies</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

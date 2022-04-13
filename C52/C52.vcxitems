@@ -29,6 +29,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)reg52.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SHT_30.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)string.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Timer_0.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UART.h" />
   </ItemGroup>

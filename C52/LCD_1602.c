@@ -83,6 +83,26 @@ void LCD_1602_Clear()
 }
 
 /// <summary>
+/// 清除行
+/// </summary>
+/// <param name="row">行</param>
+void LCD_1602_Clear_Row(unsigned char row)
+{
+    unsigned char i;
+    switch_device();
+
+    i = (row == 0) ? 0x80 : 0xC0;
+    write_command(i);
+
+    for (i = 0; i < 16; i++)
+    {
+        write_char(0x20);  //无显示
+    }
+
+    IIC_Stop();
+}
+
+/// <summary>
 /// 显示字符串
 /// <para>带自动换行</para>
 /// </summary>

@@ -20,6 +20,12 @@ void LCD_1602_Init();
 void LCD_1602_Clear();
 
 /// <summary>
+/// 清除行
+/// </summary>
+/// <param name="row">行</param>
+void LCD_1602_Clear_Row(unsigned char row);
+
+/// <summary>
 /// 显示字符串
 /// </summary>
 /// <param name="row">行</param>

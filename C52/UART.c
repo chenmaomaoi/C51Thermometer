@@ -12,6 +12,9 @@
 
 #define PARITYBIT NONE_PARITY   //Testing even parity
 
+#define RecvdStrMaxLength 64	//接收字符串的最大长度
+
+void (*UART_Event_RecvdChar)(const unsigned char ch);
 void (*UART_Event_RecvdStr)(const unsigned char* str);
 
 /// <summary>
@@ -83,7 +86,7 @@ void UART_SendString(const unsigned char* str)
 /// <returns></returns>
 const unsigned char* recvingStr()
 {
-	unsigned char recvdStr[64];
+	unsigned char recvdStr[RecvdStrMaxLength];
 	unsigned char i = 0;
 	unsigned char count = 0;
 loop:
@@ -115,7 +118,15 @@ void UART_ISR() interrupt 4
 {
 	if (RI)
 	{
-		//触发字符串接收事件
-		(*UART_Event_RecvdStr)(recvingStr());
+		// 优先触发接收byte事件
+		// 若没有绑定接收byte事件，则触发字符串接收事件
+		if (UART_Event_RecvdChar != NULL)
+		{
+			(*UART_Event_RecvdChar)(SBUF);
+		}
+		else if (UART_Event_RecvdStr != NULL)
+		{
+			(*UART_Event_RecvdStr)(recvingStr());
+		}
 	}
 }

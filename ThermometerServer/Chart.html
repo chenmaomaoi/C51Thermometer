@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=5,6,7,8,9,10,11, chrome=1" />
+    <title>ECharts</title>
+</head>
+
+<body>
+    <div id="main" style="width:800px;height:800px;margin-left:-8px" />
+    <script src="Scripts/ECharts/echarts-all.js" charset="UTF-8"></script>
+    <script>
+        myChart = echarts.init(document.getElementById('main'));
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    animation: false,
+                    label: {
+                        backgroundColor: '#505765'
+                    }
+                }
+            },
+            legend: {
+                data: ['温度', '湿度'],
+                left: 10
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    // prettier-ignore
+                    data: [''].map(function (str) {
+                        return str.replace(' ', '\n');
+                    })
+                }],
+            yAxis: [
+                {
+                    name: '温度(℃)',
+                    type: 'value',
+                },
+                {
+                    name: '湿度(%)',
+                    type: 'value',
+                    max: 100
+                }
+            ],
+            series: [
+                {
+                    name: '温度',
+                    type: 'line',
+                    smooth: true,
+                    color: 'OrangeRed',
+                    yAxisIndex: 0,
+                    // prettier-ignore
+                    data: [],
+                    markPoint: {
+                        data: [
+                            { type: 'max', name: 'Max' },
+                            { type: 'min', name: 'Min' }
+                        ]
+                    },
+                    markLine: {
+                        data: [{ type: 'average', name: 'Avg' }]
+                    }
+                },
+                {
+                    name: '湿度',
+                    type: 'line',
+                    smooth: true,
+                    color: 'DeepSkyBlue',
+                    yAxisIndex: 1,
+                    // prettier-ignore
+                    data: [],
+                    markPoint: {
+                        data: [
+                            { type: 'max', name: 'Max' },
+                            { type: 'min', name: 'Min' }
+                        ]
+                    },
+                    markLine: {
+                        data: [{ type: 'average', name: 'Avg' }]
+                    }
+                }
+            ]
+        };
+
+        function jsShowHide(info) {
+            if (info == 0) {
+                myChart.clear();
+            }
+            else {
+                myChart.setOption(option);
+            }
+        }
+
+        function jsPushData(x, y, z) {
+            option.xAxis[0].data.push(x.replace(' ', '\n'));
+            option.series[0].data.push(y);
+            option.series[1].data.push(z);
+            myChart.setOption(option);
+        }
+
+    </script>
+</body>
+</html>

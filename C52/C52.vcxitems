@@ -16,6 +16,7 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC_8.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SHT_30.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Timer_0.c" />
@@ -25,6 +26,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC_8.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)main.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)reg52.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SHT_30.h" />

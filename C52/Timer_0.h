@@ -6,7 +6,7 @@
 #include "reg52.h"
 #endif // !_REG52_H
 
-extern void (*Timer_0_Event_Elapsed)(void);
+extern void (*Timer_0_Event_Elapsed)(void);		//此事件由T0中断触发，中断向量号：1
 
 /// <summary>
 /// Timer0初始化，默认不启动定时器，间隔时间为1000ms

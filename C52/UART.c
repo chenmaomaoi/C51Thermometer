@@ -40,10 +40,10 @@ void UART_Init()
 /// <summary>
 /// 发送一个字节
 /// </summary>
-/// <param name="dat"></param>
-void UART_SendByte(unsigned char dat)
+/// <param name="ch"></param>
+void UART_SendChar(unsigned char ch)
 {
-	ACC = dat;              //Calculate the even parity bit P (PSW.0)
+	ACC = ch;              //Calculate the even parity bit P (PSW.0)
 #if (PARITYBIT != NONE_PARITY)
 	if (P)                  //Set the parity bit according to P
 	{
@@ -76,7 +76,7 @@ void UART_SendString(const unsigned char* str)
 	unsigned char i;
 	for (i = 0; i < strlen(str); i++)
 	{
-		UART_SendByte(str[i]);
+		UART_SendChar(str[i]);
 	}
 }
 

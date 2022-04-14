@@ -1,6 +1,6 @@
 #include "Timer_0.h"
 
-void (*Timer_0_Event_Elapsed)(void);
+void (*Timer_0_Event_Elapsed)(void);	//此事件由T0中断触发，中断向量号：1
 
 unsigned long _Timer_0_Counter;
 unsigned long _Timer_0_Interval;

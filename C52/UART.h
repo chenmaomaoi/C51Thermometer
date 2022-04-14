@@ -9,20 +9,20 @@
 #include "string.h"
 #endif // !_STRING_H
 
-extern void (*UART_Event_RecvdChar)(const unsigned char ch);
-extern void (*UART_Event_RecvdStr)(const unsigned char* str);
+extern void (*UART_Event_RecvdChar)(const unsigned char ch);	//此事件由串口中断触发，中断向量号：4
+extern void (*UART_Event_RecvdStr)(const unsigned char* str);	//此事件由串口中断触发，中断向量号：4
 
 /// <summary>
 /// 串口通信初始化
-/// <para>使用了定时器1</para>
+/// <para>使用了定时器1，用于生成串口波特率</para>
 /// </summary>
 void UART_Init();
 
 /// <summary>
 /// 发送一个字节
 /// </summary>
-/// <param name="dat"></param>
-void UART_SendByte(unsigned char dat);
+/// <param name="ch"></param>
+void UART_SendChar(unsigned char ch);
 
 /// <summary>
 /// 发送字符串

@@ -7,12 +7,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "C52", "C52\C52.vcxitems", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThermometerServer", "ThermometerServer\ThermometerServer.csproj", "{810EC7F3-4C39-4751-A514-131B83CFAD65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI.Tests", "WebAPI.Tests\WebAPI.Tests.csproj", "{EC66360A-5B3F-4B20-BC3A-72ACEA908599}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidApp", "AndroidApp\AndroidApp.csproj", "{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,34 +21,6 @@ Global
 		{810EC7F3-4C39-4751-A514-131B83CFAD65}.Release|Any CPU.ActiveCfg = Release|x64
 		{810EC7F3-4C39-4751-A514-131B83CFAD65}.Release|x64.ActiveCfg = Release|x64
 		{810EC7F3-4C39-4751-A514-131B83CFAD65}.Release|x64.Build.0 = Release|x64
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Debug|x64.Build.0 = Debug|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Release|x64.ActiveCfg = Release|Any CPU
-		{170A10FC-5494-4F64-80E4-0F4FF3D61EBE}.Release|x64.Build.0 = Release|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Debug|x64.Build.0 = Debug|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Release|x64.ActiveCfg = Release|Any CPU
-		{EC66360A-5B3F-4B20-BC3A-72ACEA908599}.Release|x64.Build.0 = Release|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Debug|x64.Build.0 = Debug|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Debug|x64.Deploy.0 = Debug|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Release|x64.ActiveCfg = Release|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Release|x64.Build.0 = Release|Any CPU
-		{E6886AFF-2C5E-4892-AD01-81FB9707D2BF}.Release|x64.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,11 +8,11 @@ void (*UART_Event_RecvdStr)(const unsigned char* str);
 /// </summary>
 void UART_Init()
 {
-	TMOD = 0x20;
-	SCON = 0x50;
+	TMOD |= 0x20;
+	SCON |= 0x50;
 	TH1 = 0xFF;
 	TL1 = TH1;
-	PCON = 0x80;
+	PCON |= 0x80;
 	//EA = 1;
 	ES = 1;
 	TR1 = 1;

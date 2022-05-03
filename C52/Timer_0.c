@@ -12,8 +12,8 @@ void Timer_0_Init()
 {
 	//1ms
 	TMOD |= 0x01;
-	TH0 = 0xFC;
-	TL0 = 0x66;
+	TH0 = 0xF8;
+	TL0 = 0xCD;
 	_Timer_0_Counter = 0;
 	_Timer_0_Interval = 1000;
 }
@@ -47,8 +47,8 @@ void Timer_0_Stop()
 
 void Timer_0_Interrupt() interrupt 1
 {
-	TH0 = 0xFC;
-	TL0 = 0x66;
+	TH0 = 0xF8;
+	TL0 = 0xCD;
 	//add your code here!
 	_Timer_0_Counter++;
 	if (_Timer_0_Counter >= _Timer_0_Interval)

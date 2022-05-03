@@ -25,9 +25,4 @@
 #include "Timer_0.h"
 #endif // !_TIMER_0_H
 
-#ifndef _LCD_1602_H
-#include "LCD_1602.h"
-#endif // !LCD_1602_H
-
-
 #endif

@@ -406,11 +406,6 @@
               <FileType>1</FileType>
               <FilePath>.\Timer_0.c</FilePath>
             </File>
-            <File>
-              <FileName>LCD_1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD_1602.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -445,11 +440,6 @@
               <FileName>Timer_0.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Timer_0.h</FilePath>
-            </File>
-            <File>
-              <FileName>LCD_1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LCD_1602.h</FilePath>
             </File>
           </Files>
         </Group>

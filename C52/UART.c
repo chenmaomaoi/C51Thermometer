@@ -3,14 +3,14 @@
 void (*UART_Event_RecvdStr)(const unsigned char* str);
 
 /// <summary>
-/// 串口通信初始化
+/// 串口通信初始化 波特率：115200
 /// <para>使用了定时器1</para>
 /// </summary>
 void UART_Init()
 {
 	TMOD = 0x20;
 	SCON = 0x50;
-	TH1 = 0xF4;
+	TH1 = 0xFF;
 	TL1 = TH1;
 	PCON = 0x80;
 	//EA = 1;
@@ -24,26 +24,7 @@ void UART_Init()
 /// <param name="dat"></param>
 void UART_SendByte(unsigned char dat)
 {
-	ACC = dat;              //Calculate the even parity bit P (PSW.0)
-#if (PARITYBIT != NONE_PARITY)
-	if (P)                  //Set the parity bit according to P
-	{
-#if (PARITYBIT == ODD_PARITY)
-		TB8 = 0;            //Set parity bit to 0
-#elif (PARITYBIT == EVEN_PARITY)
-		TB8 = 1;            //Set parity bit to 1
-#endif
-	}
-	else
-	{
-#if (PARITYBIT == ODD_PARITY)
-		TB8 = 1;            //Set parity bit to 1
-#elif (PARITYBIT == EVEN_PARITY)
-		TB8 = 0;            //Set parity bit to 0
-#endif
-	}
-#endif
-	SBUF = ACC;             //Send data to UART buffer
+	SBUF = dat;             //Send data to UART buffer
 	while (!TI);
 	TI = 0;
 }

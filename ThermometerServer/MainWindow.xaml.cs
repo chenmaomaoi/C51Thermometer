@@ -25,7 +25,7 @@ namespace WebAPI
     /// </summary>
     public partial class MainWindow : Window
     {
-        Timer timer;
+        //Timer timer;
 
         public MainWindow()
         {
@@ -34,23 +34,23 @@ namespace WebAPI
             App.tcpServer.ClientDisconnected += TcpServer_ClientDisconnected;
             App.tcpServer.ClientDataReceived += TcpServer_ClientDataReceived;
 
-            timer = new Timer
-            {
-                Interval = 1000,
-                AutoReset = true
-            };
-            timer.Elapsed += Timer_Elapsed;
+            //timer = new Timer
+            //{
+            //    Interval = 1000,
+            //    AutoReset = true
+            //};
+            //timer.Elapsed += Timer_Elapsed;
             ChartWebBrowser.Navigate(new Uri(Directory.GetCurrentDirectory() + "/Chart.html"));
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
-        {
-            btnGet8052Data_Click(sender, new RoutedEventArgs());
-        }
+        //private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        //{
+        //    btnGet8052Data_Click(sender, new RoutedEventArgs());
+        //}
 
         private void TcpServer_ClientConnected(object sender, TcpClientConnectedEventArgs e)
         {
-            timer.Start();
+            //timer.Start();
             this.Dispatcher.Invoke(new Action(() =>
             {
                 logText.Text += "TCP Connect:" + e.Session;
@@ -60,10 +60,10 @@ namespace WebAPI
 
         private void TcpServer_ClientDisconnected(object sender, TcpClientDisconnectedEventArgs e)
         {
-            if (App.tcpServer.SessionCount < 1)
-            {
-                timer.Stop();
-            }
+            //if (App.tcpServer.SessionCount < 1)
+            //{
+            //    timer.Stop();
+            //}
             this.Dispatcher.Invoke(new Action(() =>
             {
                 logText.Text = "TCP Disconnect:" + e.Session;
@@ -133,7 +133,7 @@ namespace WebAPI
         {
             if (App.tcpServer.IsListening && App.tcpServer.SessionCount > 0)
             {
-                App.tcpServer.Broadcast(Encoding.Default.GetBytes(DateTime.Now.ToString("g")));
+                //App.tcpServer.Broadcast(Encoding.Default.GetBytes(DateTime.Now.ToString("g")));
             }
         }
     }

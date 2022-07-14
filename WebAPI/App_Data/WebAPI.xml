@@ -605,7 +605,7 @@
             用户名
             </summary>
         </member>
-        <member name="P:WebAPI.DB.Domain.User.PasswordHash">
+        <member name="P:WebAPI.DB.Domain.User.PasswordHashCode">
             <summary>
             密码Hash，生成方法：Hash(密码+注册时间)
             </summary>

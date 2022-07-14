@@ -17,7 +17,10 @@ namespace WebAPI
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+#if DEBUG
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+#endif
         }
 
         /// <summary>

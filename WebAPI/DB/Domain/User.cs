@@ -39,7 +39,7 @@ namespace WebAPI.DB.Domain
         /// 密码Hash，生成方法：Hash(密码+注册时间)
         /// </summary>
         [Required]
-        public int PasswordHash { get; set; }
+        public int PasswordHashCode { get; set; }
 
         /// <summary>
         /// 注册时间

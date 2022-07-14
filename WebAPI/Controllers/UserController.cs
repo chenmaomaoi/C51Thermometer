@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
         {
             User user = UnitWork.GetDbContext().Users.Where(x => x.UserName == username).FirstOrDefault();
             //验证密码
-            if (user == null || ((password + user.RegistTime).GetHashCode() != user.PasswordHash))
+            if (user == null || ((password + user.RegistTime).GetHashCode() != user.PasswordHashCode))
             {
                 return Json(new { ret = 0, data = "", msg = "用户名密码错误" });
             }
@@ -67,7 +67,7 @@ namespace WebAPI.Controllers
                 RegistTime = DateTime.Now
             };
 
-            u.PasswordHash = (password + u.RegistTime).GetHashCode();
+            u.PasswordHashCode = (password + u.RegistTime).GetHashCode();
 
             UnitWork.Add(u);
             UnitWork.Save();

@@ -10,7 +10,7 @@ void UART_Init()
 {
 	TMOD |= 0x20;
 	SCON |= 0x50;
-	TH1 = 0xFF;
+	TH1 = 0xFE;
 	TL1 = TH1;
 	PCON |= 0x80;
 	//EA = 1;

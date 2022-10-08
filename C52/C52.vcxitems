@@ -14,6 +14,7 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BMP_280.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC_8.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c" />
@@ -23,6 +24,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)UART.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BMP_280.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC_8.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />

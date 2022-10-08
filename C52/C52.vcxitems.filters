@@ -35,6 +35,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Timer_0.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)BMP_280.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h">
@@ -72,6 +75,9 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
       <Filter>External Dependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)BMP_280.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

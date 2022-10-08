@@ -84,3 +84,16 @@ void UART_ISR() interrupt 4
 		(*UART_Event_RecvdStr)(recvingStr());
 	}
 }
+		// 优先触发接收byte事件
+		// 若没有绑定接收byte事件，则触发字符串接收事件
+		//if (UART_Event_RecvdChar != NULL)
+		//{
+		//	(*UART_Event_RecvdChar)(SBUF);
+		//}
+		//else if (UART_Event_RecvdStr != NULL)
+		//{
+		//	(*UART_Event_RecvdStr)(recvingStr());
+		//}
+		(*UART_Event_RecvdStr)(recvingStr());
+	}
+}

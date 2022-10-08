@@ -51,7 +51,7 @@
         <CreateCListing>1</CreateCListing>
         <CreateAListing>1</CreateAListing>
         <CreateLListing>1</CreateLListing>
-        <CreateIListing>0</CreateIListing>
+        <CreateIListing>1</CreateIListing>
         <AsmCond>1</AsmCond>
         <AsmSymb>1</AsmSymb>
         <AsmXref>0</AsmXref>

@@ -392,24 +392,34 @@
               <FilePath>.\UART.c</FilePath>
             </File>
             <File>
-              <FileName>CRC_8.c</FileName>
+              <FileName>BMP280.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\CRC_8.c</FilePath>
+              <FilePath>.\BMP280.c</FilePath>
             </File>
             <File>
-              <FileName>SHT_30.c</FileName>
+              <FileName>CRC8.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\SHT_30.c</FilePath>
+              <FilePath>.\CRC8.c</FilePath>
             </File>
             <File>
-              <FileName>Timer_0.c</FileName>
+              <FileName>ESP8266.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Timer_0.c</FilePath>
+              <FilePath>.\ESP8266.c</FilePath>
             </File>
             <File>
-              <FileName>LCD_1602.c</FileName>
+              <FileName>LCD1602.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\LCD_1602.c</FilePath>
+              <FilePath>.\LCD1602.c</FilePath>
+            </File>
+            <File>
+              <FileName>SHT30.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\SHT30.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer0.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Timer0.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -432,24 +442,34 @@
               <FilePath>.\main.h</FilePath>
             </File>
             <File>
-              <FileName>CRC_8.h</FileName>
+              <FileName>BMP280.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\CRC_8.h</FilePath>
+              <FilePath>.\BMP280.h</FilePath>
             </File>
             <File>
-              <FileName>SHT_30.h</FileName>
+              <FileName>CRC8.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\SHT_30.h</FilePath>
+              <FilePath>.\CRC8.h</FilePath>
             </File>
             <File>
-              <FileName>Timer_0.h</FileName>
+              <FileName>ESP8266.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Timer_0.h</FilePath>
+              <FilePath>.\ESP8266.h</FilePath>
             </File>
             <File>
-              <FileName>LCD_1602.h</FileName>
+              <FileName>LCD1602.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\LCD_1602.h</FilePath>
+              <FilePath>.\LCD1602.h</FilePath>
+            </File>
+            <File>
+              <FileName>SHT30.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\SHT30.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer0.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Timer0.h</FilePath>
             </File>
           </Files>
         </Group>

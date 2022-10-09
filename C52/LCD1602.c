@@ -1,4 +1,4 @@
-#include "LCD_1602.h"
+#include "LCD1602.h"
 
 /// <summary>
 /// 切换到当前设备
@@ -60,7 +60,7 @@ void write_char(char ch)
 /// <summary>
 /// 初始化
 /// </summary>
-void LCD_1602_Init()
+void LCD1602_Init()
 {
     switch_device();
     write_command(0x33); //将8位总线转为4位总线
@@ -75,7 +75,7 @@ void LCD_1602_Init()
 /// <summary>
 /// 清屏
 /// </summary>
-void LCD_1602_Clear()
+void LCD1602_Clear()
 {
     switch_device();
     write_command(0x01); // 清屏
@@ -85,7 +85,7 @@ void LCD_1602_Clear()
 /// <summary>
 /// 清除行
 /// </summary>
-void LCD_1602_Clear_Row(unsigned char row)
+void LCD1602_Clear_Row(unsigned char row)
 {
     char ch[16];
     unsigned char i;
@@ -93,7 +93,7 @@ void LCD_1602_Clear_Row(unsigned char row)
     {
         ch[i] = ' ';
     }
-    LCD_1602_ShowString(row, 0, ch);
+    LCD1602_ShowString(row, 0, ch);
 }
 
 /// <summary>
@@ -103,7 +103,7 @@ void LCD_1602_Clear_Row(unsigned char row)
 /// <param name="row">行</param>
 /// <param name="column">列</param>
 /// <param name="_str"></param>
-void LCD_1602_ShowString(unsigned char row, unsigned char column, const unsigned char* str)
+void LCD1602_ShowString(unsigned char row, unsigned char column, const unsigned char* str)
 {
     unsigned char i;
     unsigned char count = 16;

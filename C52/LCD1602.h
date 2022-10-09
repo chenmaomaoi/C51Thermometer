@@ -1,5 +1,5 @@
-#ifndef _LCD_1602_H
-#define _LCD_1602_H
+#ifndef _LCD1602_H
+#define _LCD1602_H
 
 #ifndef _IIC_H
 #include "IIC.h"
@@ -12,17 +12,17 @@
 /// <summary>
 /// 初始化 LCD 1602，前置条件：IIC初始化
 /// </summary>
-void LCD_1602_Init();
+void LCD1602_Init();
 
 /// <summary>
 /// 清屏
 /// </summary>
-void LCD_1602_Clear();
+void LCD1602_Clear();
 
 /// <summary>
 /// 清楚行
 /// </summary>
-void LCD_1602_Clear_Row(unsigned char row);
+void LCD1602_Clear_Row(unsigned char row);
 
 /// <summary>
 /// 显示字符串
@@ -30,6 +30,6 @@ void LCD_1602_Clear_Row(unsigned char row);
 /// <param name="row">行</param>
 /// <param name="column">列</param>
 /// <param name="str"></param>
-void LCD_1602_ShowString(unsigned char row, unsigned char column, const unsigned char* str);
+void LCD1602_ShowString(unsigned char row, unsigned char column, const unsigned char* str);
 
 #endif

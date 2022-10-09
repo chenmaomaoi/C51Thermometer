@@ -17,7 +17,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)LCD_1602.c">
+    <ClCompile Include="$(MSBuildThisFileDirectory)LCD1602.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c">
@@ -26,16 +26,19 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)UART.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)SHT_30.c">
+    <ClCompile Include="$(MSBuildThisFileDirectory)SHT30.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)CRC_8.c">
+    <ClCompile Include="$(MSBuildThisFileDirectory)CRC8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Timer_0.c">
+    <ClCompile Include="$(MSBuildThisFileDirectory)Timer0.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)BMP_280.c">
+    <ClCompile Include="$(MSBuildThisFileDirectory)BMP280.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ESP8266.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -43,7 +46,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)LCD_1602.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)LCD1602.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h">
@@ -58,10 +61,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)reg52.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)SHT_30.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)SHT30.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)CRC_8.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)CRC8.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h">
@@ -70,13 +73,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)Timer_0.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)Timer0.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)string.h">
       <Filter>External Dependencies</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)BMP_280.h">
+    <ClInclude Include="$(MSBuildThisFileDirectory)BMP280.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ESP8266.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

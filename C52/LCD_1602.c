@@ -83,6 +83,20 @@ void LCD_1602_Clear()
 }
 
 /// <summary>
+/// 清除行
+/// </summary>
+void LCD_1602_Clear_Row(unsigned char row)
+{
+    char ch[16];
+    unsigned char i;
+    for (i = 0; i < 16; i++)
+    {
+        ch[i] = ' ';
+    }
+    LCD_1602_ShowString(row, 0, ch);
+}
+
+/// <summary>
 /// 显示字符串
 /// <para>带自动换行</para>
 /// </summary>

@@ -20,6 +20,11 @@ void LCD_1602_Init();
 void LCD_1602_Clear();
 
 /// <summary>
+/// 清楚行
+/// </summary>
+void LCD_1602_Clear_Row(unsigned char row);
+
+/// <summary>
 /// 显示字符串
 /// </summary>
 /// <param name="row">行</param>

@@ -2,7 +2,7 @@
 
 char temp_ch[32];	//临时存储要显示的字符串
 unsigned char *recvdStr;
-bit Timer_0_Elapsed_Flag = 0;	//T0事件
+bit Timer_0_Elapsed_Flag = 1;	//T0事件
 bit UART_RecvdStr_Flag = 0;		//串口接收到字符串
 //bit refreshFlag = 1;
 
@@ -39,35 +39,20 @@ void main()
 		{
 			if (SHT_30_DataProcess())
 			{
-				//if (refreshFlag)
-				//{
-				//	LCD_1602_Clear_Row(0);
-				//	refreshFlag = 0;
-				//}
-				//else
-				//{
-				//	refreshFlag = 1;
-				//}
-
 				//刷新LCD1602显示
-				sprintf(temp_ch, "T:%.2f RH:%.2f ", SHT_30_T, SHT_30_RH);
+				sprintf(temp_ch, "T:%.2f RH:%.2f\r\n", SHT_30_T, SHT_30_RH);
 				LCD_1602_ShowString(1, 0, temp_ch);
 
 				//发送数据
-				UART_SendString(SHT_30_RAW_Data);
+				UART_SendString(temp_ch);
 				Timer_0_Elapsed_Flag = 0;
 			}
 		}
 
 		if (UART_RecvdStr_Flag)
-		{
-			//命令解析
-			//SI:SetInterval 设置间隔时间，unsigned long(4字节)
-			
-			
+		{			
 			//未找到则直接显示发送来的数据
-			//LCD_1602_Clear_Row(0);
-			LCD_1602_Clear();
+			LCD_1602_Clear_Row(0);
 			LCD_1602_ShowString(0, 0, recvdStr);
 
 			//refreshFlag = 0;

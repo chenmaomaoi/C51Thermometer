@@ -37,9 +37,7 @@ void UART_SendByte(unsigned char dat)
 void UART_SendString(const unsigned char* str)
 {
 	unsigned char i;
-	unsigned char length;
-	length = strlen(str);
-	for (i = 0; i < length; i++)
+	for (i = 0; i < strlen(str); i++)
 	{
 		UART_SendByte(str[i]);
 	}

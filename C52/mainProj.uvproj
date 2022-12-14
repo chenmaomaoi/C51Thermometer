@@ -437,11 +437,6 @@
               <FilePath>.\CRC8.h</FilePath>
             </File>
             <File>
-              <FileName>ESP8266.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ESP8266.h</FilePath>
-            </File>
-            <File>
               <FileName>SHT30.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\SHT30.h</FilePath>

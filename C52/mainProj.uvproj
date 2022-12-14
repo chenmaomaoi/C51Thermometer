@@ -13,14 +13,14 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>8052 (all Variants)</Device>
-          <Vendor>Generic</Vendor>
-          <Cpu>IRAM(0-0xFF) IROM(0-0x1FFF) CLOCK(12000000)</Cpu>
+          <Device>AT89C52</Device>
+          <Vendor>Microchip</Vendor>
+          <Cpu>IRAM(0-0xFF) IROM(0-0x1FFF) CLOCK(24000000)</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"LIB\STARTUP.A51" ("Standard 8051 Startup Code")</StartupFile>
           <FlashDriverDll></FlashDriverDll>
-          <DeviceId>2996</DeviceId>
-          <RegisterFile>REG52.H</RegisterFile>
+          <DeviceId>2980</DeviceId>
+          <RegisterFile>REGX52.H</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -36,8 +36,8 @@
           <BinPath></BinPath>
           <IncludePath></IncludePath>
           <LibPath></LibPath>
-          <RegisterFilePath></RegisterFilePath>
-          <DBRegisterFilePath></DBRegisterFilePath>
+          <RegisterFilePath>Atmel\</RegisterFilePath>
+          <DBRegisterFilePath>Atmel\</DBRegisterFilePath>
           <TargetStatus>
             <Error>0</Error>
             <ExitCodeStop>0</ExitCodeStop>
@@ -177,7 +177,7 @@
           </Flash1>
           <bUseTDR>0</bUseTDR>
           <Flash2></Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -377,6 +377,11 @@
           <GroupName>Source Files</GroupName>
           <Files>
             <File>
+              <FileName>httpHelper.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\httpHelper.c</FilePath>
+            </File>
+            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
@@ -392,24 +397,9 @@
               <FilePath>.\UART.c</FilePath>
             </File>
             <File>
-              <FileName>BMP280.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\BMP280.c</FilePath>
-            </File>
-            <File>
               <FileName>CRC8.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CRC8.c</FilePath>
-            </File>
-            <File>
-              <FileName>ESP8266.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ESP8266.c</FilePath>
-            </File>
-            <File>
-              <FileName>LCD1602.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\LCD1602.c</FilePath>
             </File>
             <File>
               <FileName>SHT30.c</FileName>
@@ -442,11 +432,6 @@
               <FilePath>.\main.h</FilePath>
             </File>
             <File>
-              <FileName>BMP280.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\BMP280.h</FilePath>
-            </File>
-            <File>
               <FileName>CRC8.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\CRC8.h</FilePath>
@@ -455,11 +440,6 @@
               <FileName>ESP8266.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\ESP8266.h</FilePath>
-            </File>
-            <File>
-              <FileName>LCD1602.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LCD1602.h</FilePath>
             </File>
             <File>
               <FileName>SHT30.h</FileName>

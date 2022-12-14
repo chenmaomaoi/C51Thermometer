@@ -9,6 +9,7 @@
 #include "string.h"
 #endif // !_STRING_H
 
+//extern void (*UART_Event_RecvdChar)(const unsigned char ch);
 extern void (*UART_Event_RecvdStr)(const unsigned char* str);
 
 /// <summary>

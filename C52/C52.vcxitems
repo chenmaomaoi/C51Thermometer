@@ -14,27 +14,24 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)BMP280.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC8.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)ESP8266.c" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)httpHelper.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)LCD1602.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SHT30.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Timer0.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UART.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)BMP280.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC8.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)ESP8266.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)httpHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)LCD1602.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)main.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)reg52.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)SHT30.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)stdio.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)stdlib.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)string.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Timer0.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)UART.h" />

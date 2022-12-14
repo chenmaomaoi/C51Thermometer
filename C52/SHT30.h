@@ -9,6 +9,11 @@
 #include "CRC8.h"
 #endif // !_CRC8_H
 
+#ifndef _STRING_H
+#include "string.h"
+#endif // !_STRING_H
+
+
 /// <summary>
 /// SHT30 初始化，前置条件：IIC初始化
 /// </summary>
@@ -26,12 +31,12 @@ bit SHT30_DataProcess();
 extern unsigned char SHT30_RAW_Data[7];
 
 /// <summary>
-/// SHT 30 温度
+/// SHT30 温度
 /// </summary>
 extern float SHT30_T;
 
 /// <summary>
-/// SHT 30 湿度
+/// SHT30 湿度
 /// </summary>
 extern float SHT30_RH;
 

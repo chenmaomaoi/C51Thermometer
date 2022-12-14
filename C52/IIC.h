@@ -9,6 +9,10 @@
 #include "intrins.h"
 #endif // !_INTRINS_H
 
+//#ifndef _STDLIB_H
+//#include "stdlib.h"
+//#endif // !_STDLIB_H
+
 sbit IIC_SCL = P2 ^ 0;	//IIC时钟引脚
 sbit IIC_SDA = P2 ^ 1;	//IIC数据引脚
 

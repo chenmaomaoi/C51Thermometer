@@ -5,8 +5,8 @@
 /// </summary>
 void dalay()
 {
-    _nop_();
-    _nop_();
+	_nop_();
+	_nop_();
 }
 
 /// <summary>
@@ -20,25 +20,25 @@ void dalay()
 /// </returns>
 bit wait_ack()
 {
-    bit ack = 0;
-    unsigned char i = 0;
+	bit ack = 0;
+	unsigned char i = 0;
 
-    IIC_SCL = 1;
-    dalay();
+	IIC_SCL = 1;
+	dalay();
 
-    while (IIC_SDA == 1)
-    {
-        i++;
-        if (i >= 250)
-        {
-            break;
-        }
-        ack = IIC_SDA;
-    }
+	while (IIC_SDA == 1)
+	{
+		i++;
+		if (i >= 250)
+		{
+			break;
+		}
+		ack = IIC_SDA;
+	}
 
-    IIC_SCL = 0;   //拉低，完成应答位
+	IIC_SCL = 0;   //拉低，完成应答位
 
-    return !ack;
+	return !ack;
 }
 
 /// <summary>
@@ -46,13 +46,13 @@ bit wait_ack()
 /// </summary>
 void IIC_Start()
 {
-    IIC_SDA = 1;
-    dalay();
-    IIC_SCL = 1;
-    dalay();
-    IIC_SDA = 0;
-    dalay();
-    IIC_SCL = 0;    //钳住I2C总线，准备发送或接收数据
+	IIC_SDA = 1;
+	dalay();
+	IIC_SCL = 1;
+	dalay();
+	IIC_SDA = 0;
+	dalay();
+	IIC_SCL = 0;    //钳住I2C总线，准备发送或接收数据
 }
 
 /// <summary>
@@ -60,14 +60,14 @@ void IIC_Start()
 /// </summary>
 void IIC_Stop()
 {
-    IIC_SDA = 0;
-    dalay();
-    IIC_SCL = 0;
-    dalay();
-    IIC_SCL = 1;
-    dalay();
-    IIC_SDA = 1;
-    dalay();
+	IIC_SDA = 0;
+	dalay();
+	IIC_SCL = 0;
+	dalay();
+	IIC_SCL = 1;
+	dalay();
+	IIC_SDA = 1;
+	dalay();
 }
 
 /// <summary>
@@ -75,10 +75,10 @@ void IIC_Stop()
 /// </summary>
 void IIC_Init()
 {
-    IIC_SCL = 1;
-    dalay();
-    IIC_SDA = 1;
-    dalay();
+	IIC_SCL = 1;
+	dalay();
+	IIC_SDA = 1;
+	dalay();
 }
 
 /// <summary>
@@ -92,21 +92,21 @@ void IIC_Init()
 /// </returns>
 bit IIC_Write_Byte(unsigned char dat)
 {
-    unsigned char i;
+	unsigned char i;
 
-    for (i = 0; i < 8; i++)
-    {
-        IIC_SDA = (bit)(dat & 0x80);   //先写高位
-        dalay();
-        IIC_SCL = 1;
-        dalay();
-        IIC_SCL = 0;          //下降沿采集数据
-        dalay();
-        dat = dat << 1;
-    }
+	for (i = 0; i < 8; i++)
+	{
+		IIC_SDA = (bit)(dat & 0x80);   //先写高位
+		dalay();
+		IIC_SCL = 1;
+		dalay();
+		IIC_SCL = 0;          //下降沿采集数据
+		dalay();
+		dat = dat << 1;
+	}
 
-    IIC_SDA = 1;//发送完毕后，释放数据线，检测从机应答
-    return wait_ack();//等待应答
+	IIC_SDA = 1;//发送完毕后，释放数据线，检测从机应答
+	return wait_ack();//等待应答
 }
 
 /// <summary>
@@ -120,27 +120,27 @@ bit IIC_Write_Byte(unsigned char dat)
 /// <returns></returns>
 unsigned char IIC_Read_Byte(bit ack)
 {
-    unsigned char i = 0;
-    unsigned char result = 0;
+	unsigned char i = 0;
+	unsigned char result = 0;
 
-    IIC_SDA = 1;      //先确保主机释放SDA
-    dalay();
+	IIC_SDA = 1;      //先确保主机释放SDA
+	dalay();
 
-    for (i = 0; i < 8; i++)
-    {
-        IIC_SCL = 1;
-        result = (result << 1) | IIC_SDA;
-        dalay();
-        IIC_SCL = 0;    //拉低，采集数据
-        dalay();
-    }
+	for (i = 0; i < 8; i++)
+	{
+		IIC_SCL = 1;
+		result = (result << 1) | IIC_SDA;
+		dalay();
+		IIC_SCL = 0;    //拉低，采集数据
+		dalay();
+	}
 
-    //发送应答位
-    IIC_SDA = !ack;
-    IIC_SCL = 1;
-    dalay();
-    IIC_SCL = 0;    //拉低，完成应答位
-    dalay();
+	//发送应答位
+	IIC_SDA = !ack;
+	IIC_SCL = 1;
+	dalay();
+	IIC_SCL = 0;    //拉低，完成应答位
+	dalay();
 
-    return result;
+	return result;
 }

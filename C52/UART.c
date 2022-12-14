@@ -1,5 +1,6 @@
 #include "UART.h"
 
+//void (*UART_Event_RecvdChar)(const unsigned char ch);
 void (*UART_Event_RecvdStr)(const unsigned char* str);
 
 /// <summary>
@@ -36,7 +37,9 @@ void UART_SendByte(unsigned char dat)
 void UART_SendString(const unsigned char* str)
 {
 	unsigned char i;
-	for (i = 0; i < strlen(str); i++)
+	unsigned char length;
+	length = strlen(str);
+	for (i = 0; i < length; i++)
 	{
 		UART_SendByte(str[i]);
 	}
@@ -78,20 +81,19 @@ loop:
 /// </summary>
 void UART_ISR() interrupt 4
 {
-
-	// 优先触发接收byte事件
-	// 若没有绑定接收byte事件，则触发字符串接收事件
-	//if (UART_Event_RecvdChar != NULL)
-	//{
-	//	(*UART_Event_RecvdChar)(SBUF);
-	//}
-	//else if (UART_Event_RecvdStr != NULL)
-	//{
-	//	(*UART_Event_RecvdStr)(recvingStr());
-	//}
-
 	if (RI)
 	{
+		// 优先触发接收byte事件
+		// 若没有绑定接收byte事件，则触发字符串接收事件
+		//if (UART_Event_RecvdChar)
+		//{
+		//	(*UART_Event_RecvdChar)(SBUF);
+		//}
+		//else if (UART_Event_RecvdStr)
+		//{
+		//	(*UART_Event_RecvdStr)(recvingStr());
+		//}
+
 		//触发字符串接收事件
 		(*UART_Event_RecvdStr)(recvingStr());
 	}

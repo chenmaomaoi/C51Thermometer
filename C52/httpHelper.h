@@ -5,10 +5,16 @@
 #include "string.h"
 #endif // !_STRING_H
 
+#ifndef _STDIO_H
+#include "stdio.h"
+#endif // !_STDIO_H
+
 #endif // !_HTTPHELPER_H
 
-void httpHelper_Init(const unsigned char* host);
+void httpHelper_SetHost(const unsigned char* host);
 
-unsigned char* httpHelper_POST(const unsigned char* route, const unsigned char* content);
+extern void httpHelper_POST(const char* route, void (*UART_SendStr)(const unsigned char* str));
 
-unsigned char* httpHelper_GET(const unsigned char* route);
+//void httpHelper_SetRoute(const unsigned char* route);
+
+//void httpHelper_POST(void (*UART_SendStr)(const unsigned char* str));

@@ -10,10 +10,14 @@ unsigned char SHT30_RAW_Data[7];
 /// </summary>
 float SHT30_T;
 
+unsigned int SHT30_T_16;
+
 /// <summary>
 /// Êª¶È
 /// </summary>
 float SHT30_RH;
+
+unsigned int SHT30_RH_16;
 
 /// <summary>
 /// ³õÊ¼»¯
@@ -57,10 +61,12 @@ bit SHT30_DataProcess()
 		buffer[0] = SHT30_RAW_Data[0];
 		buffer[0] <<= 8;
 		buffer[0] |= SHT30_RAW_Data[1];
+		SHT30_T_16 = buffer[0];
 
 		buffer[1] = SHT30_RAW_Data[3];
 		buffer[1] <<= 8;
 		buffer[1] |= SHT30_RAW_Data[4];
+		SHT30_RH_16 = buffer[1];
 
 		SHT30_T = 175.0f * (float)buffer[0] / 65535.0f - 45.0f;
 		SHT30_RH = 100.0f * buffer[1] / 65535.0f;

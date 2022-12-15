@@ -3,6 +3,9 @@
 unsigned char* recvdStr;
 bit Timer0_Elapsed_Flag = 1;	//T0事件
 bit UART_RecvdStr_Flag = 0;		//串口接收到字符串
+unsigned char tmp_content[24];
+unsigned char tmp_contentLengthStr[20];
+unsigned short contentLength;
 
 void Timer0_OnElapsed()
 {
@@ -39,18 +42,18 @@ void main()
 				// 拼接POST
 				// 发送给串口
 				UART_SendString("POST /api/Thermometer/AddRawData HTTP/1.1\r\n");
-
 				UART_SendString("Host:192.168.2.10:8080\r\n");
-
 				UART_SendString("Content-Type:application/json\r\n");
 
-				UART_SendString("Content-Length:5\r\n\r\n");
+				//拼接载荷
+				sprintf(tmp_content, "{\"T\":%d,\"RH\":%d}\r\n", SHT30_T_16, SHT30_RH_16);
 
-				UART_SendString("\"dd4\"");
+				//拼接载荷长度
+				contentLength = strlen(tmp_content) - 2;
+				sprintf(tmp_contentLengthStr, "Content-Length:%d\r\n\r\n", contentLength);
+				UART_SendString(tmp_contentLengthStr);
 
-				//httpString = httpHelper_POST("/api/Thermometer/AddRawData", SHT30_RAW_Data, "9");
-
-				//UART_SendString(httpString);
+				UART_SendString(tmp_content);
 				Timer0_Elapsed_Flag = 0;
 			}
 		}

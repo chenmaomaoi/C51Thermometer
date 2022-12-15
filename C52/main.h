@@ -25,16 +25,4 @@
 #include "Timer0.h"
 #endif // !_TIMER0_H
 
-//#ifndef _LCD1602_H
-//#include "LCD1602.h"
-//#endif // !_LCD1602_H
-
-//#ifndef _BMP280_h
-//#include "BMP280.h"
-//#endif // !_BMP280_h
-
-#ifndef _HTTPHELPER_H
-#include "httpHelper.h"
-#endif // !_HTTPHELPER_H
-
 #endif

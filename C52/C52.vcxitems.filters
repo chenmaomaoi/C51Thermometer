@@ -32,9 +32,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Timer0.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)httpHelper.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h">
@@ -72,9 +69,6 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)stdlib.h">
       <Filter>External Dependencies</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)httpHelper.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

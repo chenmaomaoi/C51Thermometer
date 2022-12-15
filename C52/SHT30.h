@@ -13,7 +13,6 @@
 #include "string.h"
 #endif // !_STRING_H
 
-
 /// <summary>
 /// SHT30 初始化，前置条件：IIC初始化
 /// </summary>
@@ -35,9 +34,12 @@ extern unsigned char SHT30_RAW_Data[7];
 /// </summary>
 extern float SHT30_T;
 
+extern unsigned int SHT30_T_16;
+
 /// <summary>
 /// SHT30 湿度
 /// </summary>
 extern float SHT30_RH;
 
+extern unsigned int SHT30_RH_16;
 #endif // !_SHT30_H

@@ -377,11 +377,6 @@
           <GroupName>Source Files</GroupName>
           <Files>
             <File>
-              <FileName>httpHelper.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\httpHelper.c</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>

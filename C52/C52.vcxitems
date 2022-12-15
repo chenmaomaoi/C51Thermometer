@@ -15,7 +15,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)CRC8.c" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)httpHelper.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IIC.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)main.c" />
     <ClCompile Include="$(MSBuildThisFileDirectory)SHT30.c" />
@@ -24,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CRC8.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)httpHelper.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IIC.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)intrins.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)main.h" />

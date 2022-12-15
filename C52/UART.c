@@ -7,8 +7,8 @@
 #define MARK_PARITY     3   //Mark parity,1校验
 #define SPACE_PARITY    4   //Space parity,0校验
 
-#define FOSC 11059200L      //System frequency
-#define BAUD 9600           //UART baudrate
+#define FOSC 44236800L      //System frequency
+#define BAUD 115200           //UART baudrate
 
 #define PARITYBIT NONE_PARITY   //Testing even parity
 

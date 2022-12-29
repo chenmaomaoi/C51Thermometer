@@ -1,10 +1,7 @@
 #ifndef _TIMER0_H
 #define _TIMER0_H
-#endif // !_TIMER0_H
 
-#ifndef _REG52_H
 #include "reg52.h"
-#endif // !_REG52_H
 
 extern void (*Timer0_Event_Elapsed)(void);
 
@@ -28,3 +25,5 @@ void Timer0_Start();
 /// ֹͣ
 /// </summary>
 void Timer0_Stop();
+
+#endif

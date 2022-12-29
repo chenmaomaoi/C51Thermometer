@@ -1,17 +1,9 @@
 #ifndef _SHT30_H
 #define _SHT30_H
 
-#ifndef _IIC_H
 #include "IIC.h"
-#endif // !_IIC_H
-
-#ifndef _CRC8_H
 #include "CRC8.h"
-#endif // !_CRC8_H
-
-#ifndef _STRING_H
 #include "string.h"
-#endif // !_STRING_H
 
 /// <summary>
 /// SHT30 初始化，前置条件：IIC初始化
@@ -42,4 +34,5 @@ extern unsigned int SHT30_T_16;
 extern float SHT30_RH;
 
 extern unsigned int SHT30_RH_16;
-#endif // !_SHT30_H
+
+#endif

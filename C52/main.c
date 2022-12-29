@@ -24,11 +24,11 @@ void main()
 	SHT30_Init();
 
 	Timer0_Init();
-	Timer0_Event_Elapsed = &Timer0_OnElapsed;
+	Timer0_Event_Elapsed = Timer0_OnElapsed;
 	Timer0_SetInterval(5000);
 	Timer0_Start();
 
-	UART_Event_RecvdStr = &UART_OnRecvdStr;
+	UART_Event_RecvdStr = UART_OnRecvdStr;
 	UART_Init();
 
 	EA = 1;
@@ -46,7 +46,7 @@ void main()
 				UART_SendString("Content-Type:application/json\r\n");
 
 				//拼接载荷
-				sprintf(tmp_content, "{\"T\":%d,\"RH\":%d}\r\n", SHT30_T_16, SHT30_RH_16);
+				sprintf(tmp_content, "{\"T\":%u,\"RH\":%u}\r\n", SHT30_T_16, SHT30_RH_16);
 
 				//拼接载荷长度
 				contentLength = strlen(tmp_content) - 2;

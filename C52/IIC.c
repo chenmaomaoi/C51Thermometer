@@ -18,9 +18,9 @@ void dalay()
 /// <para>0:不应答</para>
 /// <para>1:应答</para>
 /// </returns>
-bit wait_ack()
+unsigned char wait_ack()
 {
-	bit ack = 0;
+	unsigned char ack = 0;
 	unsigned char i = 0;
 
 	IIC_SCL = 1;
@@ -90,7 +90,7 @@ void IIC_Init()
 /// <para>0:从机不应答，不要继续发送数据</para>
 /// <para>1:从机应答，继续发送数据</para>
 /// </returns>
-bit IIC_Write_Byte(unsigned char dat)
+unsigned char IIC_Write_Byte(unsigned char dat)
 {
 	unsigned char i;
 
@@ -118,7 +118,7 @@ bit IIC_Write_Byte(unsigned char dat)
 /// <para>　　1->继续读取下一个字节</para>
 /// </param>
 /// <returns></returns>
-unsigned char IIC_Read_Byte(bit ack)
+unsigned char IIC_Read_Byte(unsigned char ack)
 {
 	unsigned char i = 0;
 	unsigned char result = 0;
@@ -136,7 +136,7 @@ unsigned char IIC_Read_Byte(bit ack)
 	}
 
 	//发送应答位
-	IIC_SDA = !ack;
+	IIC_SDA = !(bit)ack;
 	IIC_SCL = 1;
 	dalay();
 	IIC_SCL = 0;    //拉低，完成应答位

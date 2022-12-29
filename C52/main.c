@@ -21,7 +21,8 @@ void UART_OnRecvdStr(const unsigned char* str)
 void main()
 {
 	IIC_Init();
-	SHT30_Init();
+
+	SHT30_Init(IIC_Start, IIC_Stop, IIC_Read_Byte, IIC_Write_Byte);
 
 	Timer0_Init();
 	Timer0_Event_Elapsed = Timer0_OnElapsed;
@@ -46,7 +47,7 @@ void main()
 				UART_SendString("Content-Type:application/json\r\n");
 
 				//拼接载荷
-				sprintf(tmp_content, "{\"T\":%u,\"RH\":%u}\r\n", SHT30_T_16, SHT30_RH_16);
+				sprintf(tmp_content, "{\"T\":%u,\"RH\":%u}\r\n", SHT30_T_uint16, SHT30_RH_uint16);
 
 				//拼接载荷长度
 				contentLength = strlen(tmp_content) - 2;

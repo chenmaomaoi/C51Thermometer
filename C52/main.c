@@ -33,6 +33,7 @@ void main()
 	UART_Init();
 
 	EA = 1;
+	UART_SendString("1");
 
 	while (1)
 	{
@@ -61,7 +62,10 @@ void main()
 
 		if (UART_RecvdStr_Flag)
 		{
+			UART_SendString("recvd:");
+			UART_SendString(recvdStr);
 			UART_RecvdStr_Flag = 0;
+
 		}
 	}
 }

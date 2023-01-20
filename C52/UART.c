@@ -1,7 +1,7 @@
 #include "UART.h"
 
 //void (*UART_Event_RecvdChar)(const unsigned char ch);
-void (*UART_Event_RecvdStr)(const unsigned char* str);
+void (*UART_Event_RecvdStr)(const unsigned char* str) = 0;
 
 /// <summary>
 /// 串口通信初始化 波特率：115200
@@ -91,8 +91,10 @@ void UART_ISR() interrupt 4
 		//{
 		//	(*UART_Event_RecvdStr)(recvingStr());
 		//}
-
-		//触发字符串接收事件
-		(*UART_Event_RecvdStr)(recvingStr());
+		if (UART_Event_RecvdStr !=0)
+		{
+			//触发字符串接收事件
+			UART_Event_RecvdStr(recvingStr());
+		}
 	}
 }
